@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Otimizado -->
+    <title>Prosa Tech | Ana Caroline Santos - Especialista em Cibersegurança Feminina</title>
+    <meta name="description" content="Ana Caroline Santos, especialista em Defesa Cibernética, empodera mulheres na tecnologia com conteúdo acessível sobre segurança digital. +10K seguidores no YouTube.">
+    <meta name="keywords" content="cibersegurança, segurança digital, mulheres na tecnologia, defesa cibernética, Ana Caroline Santos, Prosa Tech, hacking ético">
+    <meta name="author" content="Ana Caroline Santos">
+    <link rel="canonical" href="https://prosatech.com.br">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://prosatech.com.br">
+    <meta property="og:title" content="Prosa Tech - Especialista em Cibersegurança Feminina">
+    <meta property="og:description" content="Democratizando a cibersegurança com um toque feminino. Conteúdo técnico em linguagem acessível.">
+    <meta property="og:image" content="https://prosatech.com.br/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://prosatech.com.br">
+    <meta property="twitter:title" content="Prosa Tech - Especialista em Cibersegurança Feminina">
+    <meta property="twitter:description" content="Democratizando a cibersegurança com um toque feminino.">
+    <meta property="twitter:image" content="https://prosatech.com.br/assets/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" as="script">
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ana Caroline Santos",
+        "alternateName": "Prosa Tech",
+        "description": "Cibersegurança e Defesa Digital",
+        "jobTitle": "Arquiteta de Segurança da Informação",
+        "url": "https://prosatech.com.br",
+        "sameAs": [
+            "https://youtube.com/@prosatechchannel",
+            "https://instagram.com/prosa.tech",
+            "https://linkedin.com/in/carolsnt",
+            "https://github.com/carolsnt"
+        ],
+        "knowsAbout": ["Cibersegurança", "Defesa Digital", "Hacking Ético", "Segurança de Redes"],
+        "alumniOf": "Universidade de Tecnologia Digital"
+    }
+    </script>
+
+    <style>
+        :root {
+            /* Tema Escuro (Padrão) */
+            --neon-pink: #ff4da6;
+            --neon-cyan: #00e6ff;
+            --neon-purple: #cc33ff;
+            --neon-green: #39ff14;
+            --deep-space: #08081c;
+            --white: #ffffff;
+            --cream: #f5e6ff;
+            --grid-color: rgba(255, 255, 255, 0.05);
+            --font-display: 'Orbitron', sans-serif;
+            --font-main: 'Rajdhani', sans-serif;
+            --glow-intensity: 1;
+            --shadow-soft: rgba(0, 0, 0, 0.1);
+        }
+
+        :root[data-theme="light"] {
+            /* Tema Claro */
+            --neon-pink: #ff3399;
+            --neon-cyan: #00b7eb;
+            --neon-purple: #a100f0;
+            --neon-green: #00cc00;
+            --deep-space: #e6e6ff;
+            --white: #08081c;
+            --cream: #1a0033;
+            --grid-color: rgba(8, 8, 28, 0.05);
+            --glow-intensity: 0.7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--deep-space);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 30px 30px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Performance: Will-change para animações */
+        .will-animate {
+            will-change: transform, opacity;
+        }
+
+        /* Custom Cursor Melhorado */
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--neon-cyan);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 10px var(--neon-cyan);
+            mix-blend-mode: difference;
+        }
+
+        .custom-cursor.interactive {
+            width: 30px;
+            height: 30px;
+            background: var(--neon-pink);
+            border-color: var(--neon-pink);
+            box-shadow: 0 0 20px var(--neon-pink);
+        }
+
+        /* Esconder cursor padrão apenas em elementos interativos */
+        a, button, .interactive { cursor: none; }
+
+        /* Background Effects */
+        #vanta-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.03) 2px,
+                rgba(255, 255, 255, 0.03) 4px
+            );
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        /* Header Melhorado */
+        header {
+            background: rgba(8, 8, 28, 0.85);
+            backdrop-filter: blur(15px);
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--neon-pink);
+            box-shadow: 0 4px 30px rgba(255, 77, 166, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .header-scrolled {
+            background: rgba(8, 8, 28, 0.95);
+            padding: 1rem 0;
+            box-shadow: 0 8px 40px rgba(255, 77, 166, 0.4);
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 15px var(--neon-cyan);
+            letter-spacing: 2px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            margin-right: 0.75rem;
+            animation: pulse-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            from { text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan); }
+            to { text-shadow: 0 0 15px var(--neon-cyan), 0 0 25px var(--neon-cyan), 0 0 35px var(--neon-cyan); }
+        }
+
+        /* Navigation Melhorada */
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.75rem 1.25rem;
+            position: relative;
+            font-family: var(--font-main);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 8px;
+            font-size: 1.1rem;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 8px;
+            padding: 2px;
+            background: linear-gradient(45deg, var(--neon-pink), var(--neon-cyan));
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: xor;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        nav a:hover::before,
+        nav a:focus::before {
+            opacity: 1;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            color: var(--neon-pink);
+            text-shadow: 0 0 10px var(--neon-pink);
+            transform: translateY(-2px);
+        }
+
+        /* Theme Toggle Melhorado */
+        .theme-toggle {
+            position: relative;
+            width: 70px;
+            height: 35px;
+            background: var(--deep-space);
+            border-radius: 17.5px;
+            border: 2px solid var(--neon-pink);
+            cursor: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .theme-toggle::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 27px;
+            height: 27px;
+            background: var(--neon-pink);
+            border-radius: 50%;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 15px var(--neon-pink);
+        }
+
+        .theme-toggle.active::before {
+            left: 37px;
+            background: var(--neon-cyan);
+            box-shadow: 0 0 15px var(--neon-cyan);
+        }
+
+        .theme-toggle i {
+            position: absolute;
+            font-size: 16px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 10;
+        }
+
+        .theme-toggle .fa-sun {
+            color: var(--neon-cyan);
+            right: 10px;
+            top: 9px;
+            opacity: 0;
+            transform: scale(0.5) rotate(-90deg);
+        }
+
+        .theme-toggle .fa-moon {
+            color: var(--white);
+            left: 10px;
+            top: 9px;
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+
+        .theme-toggle.active .fa-sun {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+
+        .theme-toggle.active .fa-moon {
+            opacity: 0;
+            transform: scale(0.5) rotate(90deg);
+        }
+
+        /* Botões Cyber Melhorados */
+        .cyber-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: transparent;
+            color: var(--neon-cyan);
+            border: 2px solid var(--neon-cyan);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            cursor: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            letter-spacing: 1px;
+        }
+
+        .cyber-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple));
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cyber-btn:hover {
+            color: var(--deep-space);
+            box-shadow: 
+                0 0 25px var(--neon-cyan),
+                inset 0 0 25px rgba(0, 230, 255, 0.2);
+            transform: translateY(-3px);
+            border-color: transparent;
+        }
+
+        .cyber-btn:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .cyber-btn span {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 8rem 0;
+            scroll-margin-top: 6rem;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            text-align: center;
+            margin-bottom: 4rem;
+            font-size: clamp(2rem, 4vw, 3rem);
+            position: relative;
+            color: var(--neon-pink);
+            text-shadow: 0 0 20px var(--neon-pink);
+            font-weight: 700;
+        }
+
+        .section-title::before,
+        .section-title::after {
+            content: '◆';
+            color: var(--neon-cyan);
+            margin: 0 1.5rem;
+            text-shadow: 0 0 15px var(--neon-cyan);
+            animation: sparkle 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes sparkle {
+            0% { transform: scale(1) rotate(0deg); }
+            100% { transform: scale(1.1) rotate(180deg); }
+        }
+
+        /* Hero Section Melhorada */
+        .hero {
+            background: linear-gradient(135deg, var(--deep-space) 0%, rgba(8, 8, 28, 0.8) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            margin-bottom: 2rem;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple), var(--neon-pink));
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient-shift 3s ease-in-out infinite alternate;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--cream);
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: var(--white);
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--neon-green);
+            text-shadow: 0 0 15px var(--neon-green);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--cream);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Cards Aprimorados */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: rgba(20, 20, 40, 0.8);
+            border: 2px solid transparent;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            backdrop-filter: blur(10px);
+            transform-style: preserve-3d;
+            cursor: none;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 16px;
+            padding: 2px;
+            background: linear-gradient(45deg, var(--neon-pink), var(--neon-cyan), var(--neon-purple));
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: xor;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 
+                0 20px 40px rgba(0, 230, 255, 0.3),
+                0 0 30px rgba(255, 77, 166, 0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-card-content {
+            padding: 2rem;
+        }
+
+        .project-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--neon-cyan);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        .project-card p {
+            font-size: 1.1rem;
+            color: var(--cream);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: var(--neon-green);
+        }
+
+        .stat i {
+            font-size: 0.8rem;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: rgba(20, 20, 40, 0.7);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--neon-pink);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 77, 166, 0.2);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--neon-cyan);
+        }
+
+        .author-info h4 {
+            color: var(--neon-cyan);
+            font-weight: 600;
+        }
+
+        .author-info span {
+            color: var(--cream);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Form Melhorado */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--neon-cyan);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(255, 77, 166, 0.3);
+            border-radius: 8px;
+            background: rgba(20, 20, 40, 0.6);
+            color: var(--white);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1rem;
+            font-family: var(--font-main);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--neon-pink);
+            box-shadow: 
+                0 0 15px rgba(255, 77, 166, 0.4),
+                inset 0 0 15px rgba(255, 77, 166, 0.1);
+            background: rgba(20, 20, 40, 0.8);
+        }
+
+        /* Social Links Melhorados */
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            background: rgba(20, 20, 40, 0.8);
+            color: var(--white);
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            cursor: none;
+            font-weight: 600;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 50px;
+            padding: 2px;
+            background: var(--gradient);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: xor;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-link:hover::before {
+            opacity: 1;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px var(--shadow-color);
+        }
+
+        .social-link.youtube {
+            --gradient: linear-gradient(45deg, #FF0000, #CC0000);
+            --shadow-color: rgba(255, 0, 0, 0.3);
+        }
+
+        .social-link.linkedin {
+            --gradient: linear-gradient(45deg, #0077B5, #005582);
+            --shadow-color: rgba(0, 119, 181, 0.3);
+        }
+
+        .social-link.whatsapp {
+            --gradient: linear-gradient(45deg, #25D366, #128C7E);
+            --shadow-color: rgba(37, 211, 102, 0.3);
+        }
+
+        .social-link.instagram {
+            --gradient: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+            --shadow-color: rgba(214, 41, 118, 0.3);
+        }
+
+        .social-link.github {
+            --gradient: linear-gradient(45deg, #6e5494, #4a3c6b);
+            --shadow-color: rgba(110, 84, 148, 0.3);
+        }
+
+        .social-link i {
+            font-size: 1.2rem;
+        }
+
+        .follower-count {
+            background: var(--neon-pink);
+            color: var(--deep-space);
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--deep-space);
+            border-top: 2px solid var(--neon-pink);
+            padding: 4rem 0 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+        }
+
+        /* Accessibility & Performance */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--neon-pink);
+            color: var(--deep-space);
+            padding: 8px 16px;
+            z-index: 10000;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border-radius: 0 0 8px 0;
+            cursor: none;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--neon-cyan);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* Animations */
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Loading Animation */
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(0, 230, 255, 0.3);
+            border-top: 3px solid var(--neon-cyan);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .hero-stats {
+                gap: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            section {
+                padding: 4rem 0;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .social-link {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            :root {
+                --neon-pink: #ff0066;
+                --neon-cyan: #00ffff;
+                --neon-purple: #cc00ff;
+                --white: #ffffff;
+                --deep-space: #000000;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .scanlines,
+            #vanta-bg,
+            .custom-cursor,
+            .theme-toggle {
+                display: none !important;
+            }
+            
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            
+            section {
+                break-inside: avoid;
+            }
+        }
+
+        /* Fix: fade-in.visible animation should be here */
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+</head>
+<body>
+    <div id="vanta-bg"></div>
+    <div class="scanlines"></div>
+    <div class="custom-cursor" id="customCursor"></div>
+    <a href="#main-content" class="skip-link">Pular para conteúdo</a>
+
+    <header id="header">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="#inicio" class="logo" aria-label="Prosa Tech - Página inicial">
+                <span class="logo-icon">🛡️</span>
+                Prosa Tech Cybersec 
+            </a>
+            <nav aria-label="Navegação principal">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#portfolio">Portfólio</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle" id="themeToggle" role="button" aria-label="Alternar entre tema claro e escuro" tabindex="0">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="inicio" class="hero">
+            <div class="hero-content container mx-auto px-4">
+                <div class="hero-subtitle fade-in">Arquiteta em Cibersegurança</div>
+                <h1 class="fade-in" data-text="Ana Caroline Santos">Ana Caroline Santos</h1>
+                <p class="fade-in">
+                    Democratizando a cibersegurança com um toque feminino. Transformo conceitos complexos em conteúdo acessível para empoderar mulheres na tecnologia.
+                </p>
+                
+                <div class="hero-stats fade-in">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="3511">0</span>
+                        <span class="stat-label">Seguidores</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="23000">0</span>
+                        <span class="stat-label">Visualizações</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-label">Mulheres Capacitadas</span>
+                    </div>
+                </div>
+
+                <div class="fade-in">
+                    <a href="#portfolio" class="cyber-btn interactive">
+                        <span>🚀 Conheça meu trabalho</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="bg-deep-space">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title">Sobre Mim</h2>
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/3 slide-in-left">
+                        <div class="relative">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23ff4da6'/%3E%3Ctext x='50%25' y='50%25' font-size='100' fill='white' text-anchor='middle' dy='.3em'%3E👩‍💻%3C/text%3E%3C/svg%3E" 
+                                 alt="Ana Caroline Santos - Arquiteta em Cibersegurança" 
+                                 class="rounded-full w-80 h-80 object-cover mx-auto border-4 border-neon-pink shadow-2xl" 
+                                 style="box-shadow: 0 0 40px rgba(255, 77, 166, 0.5);"
+                                 loading="lazy">
+                            <div class="absolute -bottom-4 -right-4 bg-neon-green text-deep-space px-4 py-2 rounded-full font-bold">
+                                🎯 Ativa
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-2/3 slide-in-right">
+                        <div class="space-y-6">
+                            <p class="text-lg leading-relaxed">
+                                Olá! Sou <strong class="text-neon-pink">Ana Caroline Santos</strong>, estudante de Defesa Cibernética na Faculdade de Informática e Administração Paulista e criadora do <strong class="text-neon-cyan">Prosa Tech</strong>.
+                            </p>
+                            <p class="text-lg leading-relaxed">
+                                Com mais de <strong class="text-neon-green">3 anos</strong> criando conteúdo sobre cibersegurança, já impactei muitas pessoas através dos meus canais digitais. Minha missão é tornar a segurança digital acessível para todos, especialmente mulheres que estão começando na área.
+                            </p>
+                            
+                            <div class="grid grid-cols-2 gap-4 mt-8">
+                                <div class="bg-gray-800 bg-opacity-50 p-4 rounded-lg border-l-4 border-neon-pink">
+                                    <h4 class="text-neon-pink font-semibold mb-2">🎓 Formação</h4>
+                                    <p class="text-sm">Defesa Cibernética - FIAP </p>
+                                    <p class="text-sm">Estudando para Certificações: CEH, CISSP</p>
+                                </div>
+                                <div class="bg-gray-800 bg-opacity-50 p-4 rounded-lg border-l-4 border-neon-cyan">
+                                    <h4 class="text-neon-cyan font-semibold mb-2">💼 Experiência</h4>
+                                    <p class="text-sm">1+ ano em Cibersegurança</p>
+                                    <p class="text-sm">Consultora em Segurança Digital</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="bg-deep-space">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title">Meus Projetos</h2>
+                <div class="project-grid">
+                    <div class="project-card fade-in interactive" tabindex="0" aria-label="Projeto Prosa Tech Channel">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240' viewBox='0 0 400 240'%3E%3Crect width='400' height='240' fill='%23FF0000'/%3E%3Ctext x='50%25' y='40%25' font-size='40' fill='white' text-anchor='middle'%3E📺%3C/text%3E%3Ctext x='50%25' y='70%25' font-size='20' fill='white' text-anchor='middle'%3EProsa Tech Channel%3C/text%3E%3C/svg%3E" 
+                             alt="Prosa Tech Channel - Canal de cibersegurança no YouTube" 
+                             loading="lazy">
+                        <div class="project-card-content">
+                            <h3>🎬 Prosa Tech Channel</h3>
+                            <p>Canal no YouTube com +135 seguidores, oferecendo tutoriais de cibersegurança em linguagem acessível para iniciantes e profissionais.</p>
+                            <div class="project-stats">
+                                <span class="stat"><i class="fas fa-eye"></i> 746 views</span>
+                                <span class="stat"><i class="fas fa-users"></i> 135 subs</span>
+                                <span class="stat"><i class="fas fa-video"></i> 3 vídeos</span>
+                            </div>
+                            <a href="https://youtube.com/@prosatechchannel" class="cyber-btn interactive" target="_blank" rel="noopener">
+                                <span>🔴 Assistir Canal</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in interactive" tabindex="0" aria-label="Projeto Instagram Prosa Tech">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240' viewBox='0 0 400 240'%3E%3Cdefs%3E%3CradialGradient id='ig' cx='50%25' cy='50%25'%3E%3Cstop offset='0%25' stop-color='%23feda75'/%3E%3Cstop offset='25%25' stop-color='%23fa7e1e'/%3E%3Cstop offset='50%25' stop-color='%23d62976'/%3E%3Cstop offset='75%25' stop-color='%23962fbf'/%3E%3Cstop offset='100%25' stop-color='%234f5bd5'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='400' height='240' fill='url(%23ig)'/%3E%3Ctext x='50%25' y='40%25' font-size='40' fill='white' text-anchor='middle'%3E📸%3C/text%3E%3Ctext x='50%25' y='70%25' font-size='18' fill='white' text-anchor='middle'%3E@prosa.tech%3C/text%3E%3C/svg%3E" 
+                             alt="Instagram Prosa Tech - Conteúdo visual sobre segurança digital" 
+                             loading="lazy">
+                        <div class="project-card-content">
+                            <h3>📱 Instagram @prosa.tech</h3>
+                            <p>Conteúdo diário sobre segurança digital em formato visual, com dicas práticas e alertas sobre ameaças atuais.</p>
+                            <div class="project-stats">
+                                <span class="stat"><i class="fas fa-heart"></i> 23K likes</span>
+                                <span class="stat"><i class="fas fa-users"></i> 4K followers</span>
+                                <span class="stat"><i class="fas fa-images"></i> 30+ posts</span>
+                            </div>
+                            <a href="https://instagram.com/prosa.tech" class="cyber-btn interactive" target="_blank" rel="noopener">
+                                <span>📷 Seguir Perfil</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in interactive" tabindex="0" aria-label="Projeto Kindin App">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240' viewBox='0 0 400 240'%3E%3Crect width='400' height='240' fill='%2300e6ff'/%3E%3Ctext x='50%25' y='40%25' font-size='40' fill='white' text-anchor='middle'%3E📚%3C/text%3E%3Ctext x='50%25' y='70%25' font-size='20' fill='white' text-anchor='middle'%3EKindin App%3C/text%3E%3C/svg%3E" 
+                             alt="Kindin App - Aplicativo para envio de ebooks para Kindle" 
+                             loading="lazy">
+                        <div class="project-card-content">
+                            <h3>📖 Kindin App</h3>
+                            <p>Aplicação web que facilita o envio de eBooks no formato EPUB diretamente para dispositivos Kindle via email.</p>
+                            <div class="project-stats">
+                                <span class="stat"><i class="fas fa-download"></i> 5 downloads</span>
+                                <span class="stat"><i class="fas fa-star"></i> 4.8★ rating</span>
+                                <span class="stat"><i class="fas fa-book"></i> 50 books sent</span>
+                            </div>
+                            <a href="https://kindin.app" class="cyber-btn interactive" target="_blank" rel="noopener">
+                                <span>📲 Usar App</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in interactive" tabindex="0" aria-label="Projeto CyberShield Pro">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240' viewBox='0 0 400 240'%3E%3Crect width='400' height='240' fill='%23cc33ff'/%3E%3Ctext x='50%25' y='40%25' font-size='40' fill='white' text-anchor='middle'%3E🛡️%3C/text%3E%3Ctext x='50%25' y='70%25' font-size='18' fill='white' text-anchor='middle'%3ECyberShield Pro%3C/text%3E%3C/svg%3E" 
+                             alt="CyberShield Pro - Sistema avançado de proteção digital" 
+                             loading="lazy">
+                        <div class="project-card-content">
+                            <h3>🔒 CyberShield Pro</h3>
+                            <p>Sistema inteligente de proteção digital com IA, criptografia avançada e monitoramento 24/7 para empresas.</p>
+                            <div class="project-stats">
+                                <span class="stat"><i class="fas fa-shield-alt"></i> 99.9% uptime</span>
+                                <span class="stat"><i class="fas fa-building"></i> 50+ empresas</span>
+                                <span class="stat"><i class="fas fa-bug"></i> 0 breaches</span>
+                            </div>
+                            <a href="#" class="cyber-btn interactive">
+                                <span>🔐 Saiba Mais</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="depoimentos" class="bg-deep-space">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title">O que dizem sobre meu trabalho</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card fade-in">
+                        <p class="testimonial-text">
+                            "Tenho o prazer de recomendar Ana Caroline, aluna de Defesa Cibernética, por sua dedicação e comprometimento com a área de segurança da informação. Ao longo de seu aprendizado, demonstrou curiosidade técnica, proatividade na resolução de problemas e um interesse genuíno em aprimorar seus conhecimentos sobre cibersegurança, redes e análise de ameaças!"
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Ccircle cx='25' cy='25' r='25' fill='%23ff4da6'/%3E%3Ctext x='50%25' y='50%25' font-size='25' fill='white' text-anchor='middle' dy='.3em'%3E👩%3C/text%3E%3C/svg%3E" 
+                                 alt="Avatar de Gustavo Khairalla" 
+                                 class="testimonial-avatar" 
+                                 loading="lazy">
+                            <div class="author-info">
+                                <h4>Gustavo Khairalla</h4>
+                                <span>Cyber Threat Intelligence Analyst - Itaú </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card fade-in">
+                        <p class="testimonial-text">
+                            "Tive o prazer de dar uma aula (infelizmente uma só mesmo) de Segurança da Informação para a Carol e nesse único contato pude perceber o quanto ela é interessada, inteligente e dinâmica. Depois, ao ver os perfis dela nas redes ainda fui surpreendido com o engajamento dela em eventos, visitando fabricantes e também em uma ONG que ajuda a trazer mais mulheres para a TI. Tenho certeza de que ela tem um futuro brilhante, assim como já é o presente."
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Ccircle cx='25' cy='25' r='25' fill='%2300e6ff'/%3E%3Ctext x='50%25' y='50%25' font-size='25' fill='white' text-anchor='middle' dy='.3em'%3E👨%3C/text%3E%3C/svg%3E" 
+                                 alt="Avatar de Alexandre Garrido" 
+                                 class="testimonial-avatar" 
+                                 loading="lazy">
+                            <div class="author-info">
+                                <h4>Alexandre Garrido Villaça</h4>
+                                <span>Arquiteto Especialista de Segurança da Informação – Porto</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card fade-in">
+                        <p class="testimonial-text">
+                            "É com grande satisfação que recomendo Ana Caroline, que foi uma das minhas alunas do curso de Introdução à Programação do Minas Programam. Sua jornada foi marcada por um incrível crescimento e dedicação, evidenciando sua paixão pela programação. Durante o curso, a Ana não apenas absorveu os conceitos com facilidade, mas também contribuiu para um ambiente de aprendizado colaborativo, destacando-se como uma colega comprometida. Estou certa de que sua habilidade e entusiasmo a impulsionarão para conquistas ainda mais grandiosas na área de programação"
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Ccircle cx='25' cy='25' r='25' fill='%23cc33ff'/%3E%3Ctext x='50%25' y='50%25' font-size='25' fill='white' text-anchor='middle' dy='.3em'%3E👩%3C/text%3E%3C/svg%3E" 
+                                 alt="Avatar de Amanda" 
+                                 class="testimonial-avatar" 
+                                 loading="lazy">
+                            <div class="author-info">
+                                <h4>Amanda Silva </h4>
+                                <span>FrontEnd Software Engineer - iFood</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="bg-deep-space">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title">Bora prosear?</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid lg:grid-cols-2 gap-12 items-start">
+                        <div class="slide-in-left">
+                            <h3 class="text-2xl font-bold mb-6 text-neon-cyan">Entre em contato</h3>
+                            <p class="text-lg mb-8 leading-relaxed">
+                                Tem alguma dúvida sobre cibersegurança? Quer discutir uma parceria? 
+                                Ou apenas quer trocar uma ideia sobre tecnologia? Estou sempre disponível para uma boa prosa! 💬
+                            </p>
+                            
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-envelope text-neon-pink text-xl"></i>
+                                    <span>prosa.tech.cybersec@gmail.com</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-phone text-neon-cyan text-xl"></i>
+                                    <span>+55 (11) 95820-3077</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-map-marker-alt text-neon-purple text-xl"></i>
+                                    <span>São Paulo, SP - Brasil</span>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg border border-neon-pink border-opacity-30">
+                                <h4 class="text-neon-pink font-semibold mb-3">⚡ Resposta Rápida</h4>
+                                <p class="text-sm">Respondo todos os emails em até 24h úteis. Para urgências, use o WhatsApp!</p>
+                            </div>
+                        </div>
+
+                        <div class="slide-in-right">
+                            <form class="contact-form" id="contactForm" novalidate>
+                                <div class="form-group">
+                                    <label for="name">Seu nome *</label>
+                                    <input type="text" id="name" required aria-describedby="name-error">
+                                    <span id="name-error" class="error-message hidden text-red-400 text-sm"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Seu e-mail *</label>
+                                    <input type="email" id="email" required aria-describedby="email-error">
+                                    <span id="email-error" class="error-message hidden text-red-400 text-sm"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="subject">Assunto</label>
+                                    <select id="subject" class="w-full p-4 border-2 border-pink-300 border-opacity-30 rounded-lg bg-gray-800 bg-opacity-60 text-white">
+                                        <option value="">Selecione um assunto</option>
+                                        <option value="consultoria">Consultoria em Cibersegurança</option>
+                                        <option value="parceria">Proposta de Parceria</option>
+                                        <option value="palestra">Convite para Palestra</option>
+                                        <option value="duvida">Dúvida Técnica</option>
+                                        <option value="outro">Outro</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message">Sua mensagem *</label>
+                                    <textarea id="message" rows="5" required aria-describedby="message-error"></textarea>
+                                    <span id="message-error" class="error-message hidden text-red-400 text-sm"></span>
+                                </div>
+                                
+                                <button type="submit" class="cyber-btn interactive w-full" id="submitBtn">
+                                    <span>🚀 Enviar mensagem</span>
+                                    <div class="loading-spinner hidden"></div>
+                                </button>
+                                
+                                <div id="formMessage" class="hidden mt-4 p-4 rounded-lg"></div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="social-links fade-in">
+                        <a href="https://youtube.com/@prosatechchannel" class="social-link youtube interactive" aria-label="YouTube - 15K seguidores" target="_blank" rel="noopener">
+                            <i class="fab fa-youtube"></i> YouTube
+                            <span class="follower-count">135</span>
+                        </a>
+                        <a href="https://linkedin.com/in/carolsnt" class="social-link linkedin interactive" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://wa.me/5511958203077" class="social-link whatsapp interactive" aria-label="WhatsApp" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="https://instagram.com/prosa.tech" class="social-link instagram interactive" aria-label="Instagram - 8K seguidores" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram"></i> Instagram
+                            <span class="follower-count">4K</span>
+                        </a>
+                        <a href="https://github.com/carolsnt" class="social-link github interactive" aria-label="GitHub" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="text-neon-pink font-bold text-lg mb-4">Prosa Tech</h4>
+                    <p class="text-sm opacity-80">Democratizando a cibersegurança com um toque feminino.</p>
+                </div>
+                <div>
+                    <h4 class="text-neon-cyan font-bold text-lg mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#sobre" class="hover:text-neon-pink transition-colors">Sobre</a></li>
+                        <li><a href="#portfolio" class="hover:text-neon-pink transition-colors">Portfólio</a></li>
+                        <li><a href="#contato" class="hover:text-neon-pink transition-colors">Contato</a></li>
+                        <li><a href="/blog" class="hover:text-neon-pink transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-neon-purple font-bold text-lg mb-4">Newsletter</h4>
+                    <p class="text-sm mb-4">Receba dicas semanais de cibersegurança</p>
+                    <div class="flex gap-2">
+                        <input type="email" placeholder="Seu e-mail" class="flex-1 px-3 py-2 text-sm rounded bg-gray-800 border border-gray-600">
+                        <button class="px-4 py-2 bg-neon-pink text-deep-space rounded text-sm font-bold">OK</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 text-center text-sm opacity-80">
+                <p>&copy; 2025 Prosa Tech Cybersec | Todos os direitos reservados</p>
+                <p class="mt-2">Feito com carinho de São Paulo para o mundo</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Performance: Store DOM elements
+        const elements = {
+            cursor: document.getElementById('customCursor'),
+            themeToggle: document.getElementById('themeToggle'),
+            header: document.getElementById('header'),
+            contactForm: document.getElementById('contactForm'),
+            submitBtn: document.getElementById('submitBtn'),
+            formMessage: document.getElementById('formMessage')
+        };
+
+        // Optimized Vanta.js background
+        let vantaEffect;
+        const initVanta = () => {
+            if (window.VANTA && window.THREE) {
+                vantaEffect = VANTA.NET({
+                    el: "#vanta-bg",
+                    mouseControls: true,
+                    touchControls: true,
+                    gyroControls: false,
+                    minHeight: 200.00,
+                    minWidth: 200.00,
+                    scale: 1.00,
+                    scaleMobile: 0.8,
+                    color: 0x00e6ff,
+                    backgroundColor: 0x08081c,
+                    points: 8.00,
+                    maxDistance: 18.00,
+                    spacing: 16.00,
+                    showDots: true
+                });
+            }
+        };
+
+        // Initialize Vanta with error handling
+        const loadVanta = () => {
+            if (typeof VANTA !== 'undefined') {
+                initVanta();
+            } else {
+                setTimeout(loadVanta, 100);
+            }
+        };
+        loadVanta();
+
+        // High-performance custom cursor
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        const cursorSpeed = 0.1;
+
+        const updateCursor = () => {
+            cursorX += (mouseX - cursorX) * cursorSpeed;
+            cursorY += (mouseY - cursorY) * cursorSpeed;
+            
+            elements.cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+            requestAnimationFrame(updateCursor);
+        };
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        updateCursor();
+
+        // Enhanced interactive elements cursor
+        const interactiveElements = document.querySelectorAll('.interactive');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => elements.cursor.classList.add('interactive'));
+            el.addEventListener('mouseleave', () => elements.cursor.classList.remove('interactive'));
+        });
+
+        // Advanced theme toggle with system preference detection
+        const themeManager = {
+            init() {
+                const savedTheme = localStorage.getItem('theme');
+                const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+                const initialTheme = savedTheme || systemTheme;
+                
+                this.setTheme(initialTheme);
+                this.bindEvents();
+            },
+
+            setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                elements.themeToggle.classList.toggle('active', theme === 'light');
+                localStorage.setItem('theme', theme);
+                
+                // Update Vanta colors based on theme
+                if (vantaEffect) {
+                    vantaEffect.setOptions({
+                        color: theme === 'light' ? 0x00b7eb : 0x00e6ff,
+                        backgroundColor: theme === 'light' ? 0xe6e6ff : 0x08081c
+                    });
+                }
+            },
+
+            toggle() {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                this.setTheme(newTheme);
+            },
+
+            bindEvents() {
+                elements.themeToggle.addEventListener('click', () => this.toggle());
+                elements.themeToggle.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.toggle();
+                    }
+                });
+
+                // Listen for system theme changes
+                window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+                    if (!localStorage.getItem('theme')) {
+                        this.setTheme(e.matches ? 'light' : 'dark');
+                    }
+                });
+            }
+        };
+
+        themeManager.init();
+
+        // Scroll-based header animation
+        let lastScrollY = window.scrollY;
+        let isScrolling = false;
+
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            
+            // Add/remove scrolled class
+            elements.header.classList.toggle('header-scrolled', currentScrollY > 50);
+            
+            // Hide/show header based on scroll direction
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                elements.header.style.transform = 'translateY(-100%)';
+            } else {
+                elements.header.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollY = currentScrollY;
+            isScrolling = false;
+        };
+
+        window.addEventListener('scroll', () => {
+            if (!isScrolling) {
+                requestAnimationFrame(handleScroll);
+                isScrolling = true;
+            }
+        }, { passive: true });
+
+        // Smooth scrolling with offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = anchor.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Advanced Intersection Observer for animations
+        const animationObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Unobserve after animation for performance
+                    animationObserver.unobserve(entry.target);
+                }
+            });
+        }, { 
+            threshold: 0.1,
+            rootMargin: '50px 0px -50px 0px'
+        });
+
+        // Observe all animation elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+            animationObserver.observe(el);
+        });
+
+        // Counter animation for stats
+        const animateCounters = () => {
+            const counters = document.querySelectorAll('[data-count]');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.dataset.count);
+                const duration = 2000; // 2 seconds
+                const startTime = performance.now();
+                
+                const updateCounter = (currentTime) => {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    
+                    // Easing function for smooth animation
+                    const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                    const current = Math.floor(target * easeOutQuart);
+                    
+                    // Format large numbers
+                    if (target >= 1000) {
+                        counter.textContent = (current / 1000).toFixed(current >= 1000 ? 0 : 1) + 'K';
+                    } else {
+                        counter.textContent = current.toLocaleString();
+                    }
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    }
+                };
+                
+                requestAnimationFrame(updateCounter);
+            });
+        };
+
+        // Start counter animation when hero section is visible
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(animateCounters, 500); // Delay for better effect
+                    heroObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const heroSection = document.querySelector('#inicio');
+        if (heroSection) heroObserver.observe(heroSection);
+
+        // Enhanced 3D card hover effects
+        const cards = document.querySelectorAll('.project-card, .testimonial-card');
+        cards.forEach(card => {
+            let isHovering = false;
+            
+            card.addEventListener('mouseenter', () => isHovering = true);
+            card.addEventListener('mouseleave', () => {
+                isHovering = false;
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            });
+            
+            card.addEventListener('mousemove', (e) => {
+                if (!isHovering) return;
+                
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+            });
+            
+            // Keyboard navigation
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    const link = card.querySelector('a');
+                    if (link) link.click();
+                }
+            });
+        });
+
+        // Advanced form validation and submission
+        const formValidator = {
+            rules: {
+                name: {
+                    required: true,
+                    minLength: 2,
+                    pattern: /^[a-zA-ZÀ-ÿ\s]+$/
+                },
+                email: {
+                    required: true,
+                    pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+                },
+                message: {
+                    required: true,
+                    minLength: 10
+                }
+            },
+
+            validate(field, value) {
+                const rule = this.rules[field];
+                const errors = [];
+
+                if (rule.required && !value.trim()) {
+                    errors.push(`${this.getFieldName(field)} é obrigatório`);
+                }
+
+                if (rule.minLength && value.length < rule.minLength) {
+                    errors.push(`${this.getFieldName(field)} deve ter pelo menos ${rule.minLength} caracteres`);
+                }
+
+                if (rule.pattern && !rule.pattern.test(value)) {
+                    errors.push(`${this.getFieldName(field)} tem formato inválido`);
+                }
+
+                return errors;
+            },
+
+            getFieldName(field) {
+                const names = {
+                    name: 'Nome',
+                    email: 'E-mail',
+                    message: 'Mensagem'
+                };
+                return names[field] || field;
+            },
+
+            showError(field, errors) {
+                const errorElement = document.getElementById(`${field}-error`);
+                if (errorElement) {
+                    errorElement.textContent = errors[0] || '';
+                    errorElement.classList.toggle('hidden', errors.length === 0);
+                }
+            }
+        };
+
+        // Real-time form validation
+        ['name', 'email', 'message'].forEach(field => {
+            const input = document.getElementById(field);
+            if (input) {
+                input.addEventListener('blur', () => {
+                    const errors = formValidator.validate(field, input.value);
+                    formValidator.showError(field, errors);
+                });
+                
+                input.addEventListener('input', () => {
+                    // Clear errors on input
+                    formValidator.showError(field, []);
+                });
+            }
+        });
+
+        // Form submission with loading state
+        if (elements.contactForm) {
+            elements.contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // Validate all fields
+                const formData = new FormData(elements.contactForm);
+                const data = Object.fromEntries(formData.entries());
+                let hasErrors = false;
+
+                ['name', 'email', 'message'].forEach(field => {
+                    const errors = formValidator.validate(field, data[field] || '');
+                    formValidator.showError(field, errors);
+                    if (errors.length > 0) hasErrors = true;
+                });
+
+                if (hasErrors) return;
+
+                // Show loading state
+                elements.submitBtn.disabled = true;
+                elements.submitBtn.querySelector('span').style.display = 'none';
+                elements.submitBtn.querySelector('.loading-spinner').classList.remove('hidden');
+
+                try {
+                    // Simulate API call
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    
+                    // Success message
+                    elements.formMessage.className = 'mt-4 p-4 rounded-lg bg-green-800 bg-opacity-50 border border-green-600 text-green-200';
+                    elements.formMessage.innerHTML = `
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-green-400"></i>
+                            <span>Mensagem enviada com sucesso! Respondo em até 24h.</span>
+                        </div>
+                    `;
+                    elements.formMessage.classList.remove('hidden');
+                    elements.contactForm.reset();
+                    
+                } catch (error) {
+                    // Error message
+                    elements.formMessage.className = 'mt-4 p-4 rounded-lg bg-red-800 bg-opacity-50 border border-red-600 text-red-200';
+                    elements.formMessage.innerHTML = `
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-exclamation-triangle text-red-400"></i>
+                            <span>Erro ao enviar mensagem. Tente novamente ou use o WhatsApp.</span>
+                        </div>
+                    `;
+                    elements.formMessage.classList.remove('hidden');
+                    
+                } finally {
+                    // Reset button state
+                    elements.submitBtn.disabled = false;
+                    elements.submitBtn.querySelector('span').style.display = 'inline';
+                    elements.submitBtn.querySelector('.loading-spinner').classList.add('hidden');
+                    
+                    // Hide message after 5 seconds
+                    setTimeout(() => {
+                        elements.formMessage.classList.add('hidden');
+                    }, 5000);
+                }
+            });
+        }
+
+        // Enhanced accessibility features
+        const accessibilityManager = {
+            init() {
+                this.handleKeyboardNavigation();
+                this.handleFocusManagement();
+                this.handleReducedMotion();
+            },
+
+            handleKeyboardNavigation() {
+                // Skip to main content
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' && e.target.classList.contains('skip-link')) {
+                        document.getElementById('main-content').focus();
+                    }
+                });
+
+                // Enhanced tab navigation
+                const focusableElements = 'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])';
+                const focusable = document.querySelectorAll(focusableElements);
+                
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Tab') {
+                        const firstElement = focusable[0];
+                        const lastElement = focusable[focusable.length - 1];
+                        
+                        if (e.shiftKey && document.activeElement === firstElement) {
+                            e.preventDefault();
+                            lastElement.focus();
+                        } else if (!e.shiftKey && document.activeElement === lastElement) {
+                            e.preventDefault();
+                            firstElement.focus();
+                        }
+                    }
+                });
+            },
+
+            handleFocusManagement() {
+                // Ensure focus is visible
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Tab') {
+                        document.body.classList.add('keyboard-nav');
+                    }
+                });
+
+                document.addEventListener('mousedown', () => {
+                    document.body.classList.remove('keyboard-nav');
+                });
+            },
+
+            handleReducedMotion() {
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    // Disable Vanta.js for reduced motion
+                    if (vantaEffect) {
+                        vantaEffect.destroy();
+                    }
+                }
+            }
+        };
+
+        accessibilityManager.init();
+
+        // Performance monitoring
+        const performanceMonitor = {
+            init() {
+                // Monitor Core Web Vitals
+                this.measureLCP();
+                this.measureFID();
+                this.measureCLS();
+            },
+
+            measureLCP() {
+                new PerformanceObserver((entryList) => {
+                    const entries = entryList.getEntries();
+                    const lastEntry = entries[entries.length - 1];
+                    console.log('LCP:', lastEntry.startTime);
+                }).observe({ entryTypes: ['largest-contentful-paint'] });
+            },
+
+            measureFID() {
+                new PerformanceObserver((entryList) => {
+                    const entries = entryList.getEntries();
+                    entries.forEach(entry => {
+                        console.log('FID:', entry.processingStart - entry.startTime);
+                    });
+                }).observe({ entryTypes: ['first-input'] });
+            },
+
+            measureCLS() {
+                let clsValue = 0;
+                new PerformanceObserver((entryList) => {
+                    entryList.getEntries().forEach(entry => {
+                        if (!entry.hadRecentInput) {
+                            clsValue += entry.value;
+                        }
+                    });
+                    console.log('CLS:', clsValue);
+                }).observe({ entryTypes: ['layout-shift'] });
+            }
+        };
+
+        // Initialize performance monitoring in development
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            performanceMonitor.init();
+        }
+
+        // Service Worker registration for PWA capabilities
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('SW registered:', registration))
+                    .catch(error => console.log('SW registration failed:', error));
+            });
+        }
+
+        // Error boundary for JavaScript errors
+        window.addEventListener('error', (e) => {
+            console.error('JavaScript Error:', e.error);
+            // In production, you would send this to an error monitoring service
+        });
+
+        window.addEventListener('unhandledrejection', (e) => {
+            console.error('Unhandled Promise Rejection:', e.reason);
+            // In production, you would send this to an error monitoring service
+        });
+
+        // Initialize lazy loading for images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Newsletter subscription
+        const newsletterForm = document.querySelector('footer input[type="email"]');
+        const newsletterBtn = document.querySelector('footer button');
+        
+        if (newsletterBtn) {
+            newsletterBtn.addEventListener('click', () => {
+                const email = newsletterForm.value.trim();
+                if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    newsletterBtn.textContent = '✓';
+                    newsletterBtn.style.background = 'var(--neon-green)';
+                    setTimeout(() => {
+                        newsletterBtn.textContent = 'OK';
+                        newsletterBtn.style.background = '';
+                        newsletterForm.value = '';
+                    }, 2000);
+                } else {
+                    newsletterForm.focus();
+                    newsletterForm.style.borderColor = 'var(--neon-pink)';
+                    setTimeout(() => {
+                        newsletterForm.style.borderColor = '';
+                    }, 2000);
+                }
+            });
+        }
+
+        console.log('🚀 Prosa Tech website loaded successfully!');
+        console.log('💜 Developed with love by Ana Caroline Santos');
+    </script>
+
+    <!-- Google Analytics (replace with your tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_TRACKING_ID');
+    </script>
+
+    <!-- Schema.org additional structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Prosa Tech",
+        "url": "https://prosatech.com.br",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://prosatech.com.br/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+</body>
+</html>

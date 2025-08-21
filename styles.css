@@ -1,0 +1,11 @@
+/* Todo o conteúdo CSS do <style> aqui */
+body {
+    font-family: 'Lobster', cursive;
+    background-color: #FDF6EC;
+    background-image: 
+        radial-gradient(#F68CC3 2px, transparent 2px),
+        radial-gradient(#C6F05D 2px, transparent 2px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+}
+/* ... outros estilos ... */
