@@ -16,8 +16,10 @@ Abra `http://127.0.0.1:5000`.
 ## Estilos do portfólio
 
 As classes utilitárias usadas pelo template estão compiladas em
-`static/tailwind.css`. O site não carrega o JavaScript do Tailwind por CDN em
-tempo de execução.
+`public/static/tailwind.css`, junto dos demais arquivos servidos pelo CDN do
+Vercel. O site não carrega o JavaScript do Tailwind por CDN em tempo de
+execução. O arquivo `vercel.json` seleciona explicitamente o framework Flask
+para que a aplicação seja publicada como uma Vercel Function.
 
 ## Configurar o formulário de contato
 
