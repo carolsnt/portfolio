@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Otimizado -->
+    <title>Prosa Tech | Ana Caroline Santos - Especialista em Cibersegurança Feminina</title>
+    <meta name="description" content="Ana Caroline Santos atua com cibersegurança, Red Team e pentest, e é fundadora do Prosa Tech, comunidade de educação e mentoria em tecnologia.">
+    <meta name="keywords" content="cibersegurança, segurança digital, mulheres na tecnologia, defesa cibernética, Ana Caroline Santos, Prosa Tech, hacking ético">
+    <meta name="author" content="Ana Caroline Santos">
+    <link rel="canonical" href="https://prosatech.com.br">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://prosatech.com.br">
+    <meta property="og:title" content="Prosa Tech - Especialista em Cibersegurança Feminina">
+    <meta property="og:description" content="Democratizando a cibersegurança com um toque feminino. Conteúdo técnico em linguagem acessível.">
+    <meta property="og:image" content="https://prosatech.com.br/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://prosatech.com.br">
+    <meta property="twitter:title" content="Prosa Tech - Especialista em Cibersegurança Feminina">
+    <meta property="twitter:description" content="Democratizando a cibersegurança com um toque feminino.">
+    <meta property="twitter:image" content="https://prosatech.com.br/assets/twitter-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo.png') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ana Caroline Santos",
+        "alternateName": "Prosa Tech",
+        "description": "Cibersegurança e Defesa Digital",
+        "jobTitle": "Arquiteta de Segurança da Informação",
+        "url": "https://prosatech.com.br",
+        "sameAs": [
+            "https://youtube.com/@prosatechchannel",
+            "https://instagram.com/prosa.tech",
+            "https://linkedin.com/in/carolsnt",
+            "https://github.com/carolsnt"
+        ],
+        "knowsAbout": ["Cibersegurança", "Defesa Digital", "Hacking Ético", "Segurança de Redes"],
+        "alumniOf": "Universidade de Tecnologia Digital"
+    }
+    </script>
+
+    <style>
+        :root {
+            /* Tema Escuro (Padrão) */
+            --neon-pink: #ff4da6;
+            --neon-cyan: #00e6ff;
+            --neon-purple: #cc33ff;
+            --neon-green: #39ff14;
+            --deep-space: #08081c;
+            --white: #ffffff;
+            --cream: #f5e6ff;
+            --grid-color: rgba(255, 255, 255, 0.05);
+            --font-display: 'Orbitron', sans-serif;
+            --font-main: 'Rajdhani', sans-serif;
+            --glow-intensity: 1;
+            --shadow-soft: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--deep-space);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image:
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 30px 30px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Performance: Will-change para animações */
+        .will-animate {
+            will-change: transform, opacity;
+        }
+
+        /* Custom Cursor Melhorado */
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--neon-cyan);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 10px var(--neon-cyan);
+            mix-blend-mode: difference;
+        }
+
+        .custom-cursor.interactive {
+            width: 30px;
+            height: 30px;
+            background: var(--neon-pink);
+            border-color: var(--neon-pink);
+            box-shadow: 0 0 20px var(--neon-pink);
+        }
+
+        /* Esconder cursor padrão apenas em elementos interativos */
+        a, button, .interactive { cursor: none; }
+
+        /* Background Effects */
+        #vanta-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.03) 2px,
+                rgba(255, 255, 255, 0.03) 4px
+            );
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        /* Header Melhorado */
+        header {
+            background: rgba(8, 8, 28, 0.85);
+            backdrop-filter: blur(15px);
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--neon-pink);
+            box-shadow: 0 4px 30px rgba(255, 77, 166, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .header-scrolled {
+            background: rgba(8, 8, 28, 0.95);
+            padding: 1rem 0;
+            box-shadow: 0 8px 40px rgba(255, 77, 166, 0.4);
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 15px var(--neon-cyan);
+            letter-spacing: 2px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            margin-right: 0.75rem;
+            animation: pulse-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            from { text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan); }
+            to { text-shadow: 0 0 15px var(--neon-cyan), 0 0 25px var(--neon-cyan), 0 0 35px var(--neon-cyan); }
+        }
+
+        /* Navigation Melhorada */
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.75rem 1.25rem;
+            position: relative;
+            font-family: var(--font-main);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 8px;
+            font-size: 1.1rem;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 8px;
+            padding: 2px;
+            background: linear-gradient(45deg, var(--neon-pink), var(--neon-cyan));
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: xor;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        nav a:hover::before,
+        nav a:focus::before {
+            opacity: 1;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            color: var(--neon-pink);
+            text-shadow: 0 0 10px var(--neon-pink);
+            transform: translateY(-2px);
+        }
+
+        /* Botões Cyber Melhorados */
+        .cyber-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: transparent;
+            color: var(--neon-cyan);
+            border: 2px solid var(--neon-cyan);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            cursor: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            letter-spacing: 1px;
+        }
+
+        .cyber-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple));
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cyber-btn:hover {
+            color: var(--deep-space);
+            box-shadow:
+                0 0 25px var(--neon-cyan),
+                inset 0 0 25px rgba(0, 230, 255, 0.2);
+            transform: translateY(-3px);
+            border-color: transparent;
+        }
+
+        .cyber-btn:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .cyber-btn span {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 8rem 0;
+            scroll-margin-top: 6rem;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            text-align: center;
+            margin-bottom: 4rem;
+            font-size: clamp(2rem, 4vw, 3rem);
+            position: relative;
+            color: var(--neon-pink);
+            text-shadow: 0 0 20px var(--neon-pink);
+            font-weight: 700;
+        }
+
+        .section-title::before,
+        .section-title::after {
+            content: '◆';
+            color: var(--neon-cyan);
+            margin: 0 1.5rem;
+            text-shadow: 0 0 15px var(--neon-cyan);
+            animation: sparkle 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes sparkle {
+            0% { transform: scale(1) rotate(0deg); }
+            100% { transform: scale(1.1) rotate(180deg); }
+        }
+
+        /* Hero Section Melhorada */
+        .hero {
+            background: linear-gradient(135deg, var(--deep-space) 0%, rgba(8, 8, 28, 0.8) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            margin-bottom: 2rem;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple), var(--neon-pink));
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient-shift 3s ease-in-out infinite alternate;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--cream);
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: var(--white);
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--neon-green);
+            text-shadow: 0 0 15px var(--neon-green);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--cream);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Cards Aprimorados */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: rgba(20, 20, 40, 0.8);
+            border: 2px solid transparent;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            backdrop-filter: blur(10px);
+            transform-style: preserve-3d;
+            cursor: none;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 16px;
+            padding: 2px;
+            background: linear-gradient(45deg, var(--neon-pink), var(--neon-cyan), var(--neon-purple));
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: xor;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow:
+                0 20px 40px rgba(0, 230, 255, 0.3),
+                0 0 30px rgba(255, 77, 166, 0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-card-content {
+            padding: 2rem;
+        }
+
+        .project-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--neon-cyan);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        .project-card p {
+            font-size: 1.1rem;
+            color: var(--cream);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: var(--neon-green);
+        }
+
+        .stat i {
+            font-size: 0.8rem;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: rgba(20, 20, 40, 0.7);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--neon-pink);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 77, 166, 0.2);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--neon-cyan);
+        }
+
+        .author-info h4 {
+            color: var(--neon-cyan);
+            font-weight: 600;
+        }
+
+        .author-info span {
+            color: var(--cream);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Form Melhorado */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--neon-cyan);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(255, 77, 166, 0.3);
+            border-radius: 8px;
+            background: rgba(20, 20, 40, 0.6);
+            color: var(--white);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1rem;
+            font-family: var(--font-main);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--neon-pink);
+            box-shadow:
+                0 0 15px rgba(255, 77, 166, 0.4),
+                inset 0 0 15px rgba(255, 77, 166, 0.1);
+            background: rgba(20, 20, 40, 0.8);
+        }
+
+        /* Social Links Melhorados */
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            background: rgba(20, 20, 40, 0.8);
+            color: var(--white);
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            cursor: none;
+            font-weight: 600;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 50px;
+            padding: 2px;
+            background: var(--gradient);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: xor;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-link:hover::before {
+            opacity: 1;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px var(--shadow-color);
+        }
+
+        .social-link.youtube {
+            --gradient: linear-gradient(45deg, #FF0000, #CC0000);
+            --shadow-color: rgba(255, 0, 0, 0.3);
+        }
+
+        .social-link.linkedin {
+            --gradient: linear-gradient(45deg, #0077B5, #005582);
+            --shadow-color: rgba(0, 119, 181, 0.3);
+        }
+
+        .social-link.whatsapp {
+            --gradient: linear-gradient(45deg, #25D366, #128C7E);
+            --shadow-color: rgba(37, 211, 102, 0.3);
+        }
+
+        .social-link.instagram {
+            --gradient: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+            --shadow-color: rgba(214, 41, 118, 0.3);
+        }
+
+        .social-link.github {
+            --gradient: linear-gradient(45deg, #6e5494, #4a3c6b);
+            --shadow-color: rgba(110, 84, 148, 0.3);
+        }
+
+        .social-link i {
+            font-size: 1.2rem;
+        }
+
+        .follower-count {
+            background: var(--neon-pink);
+            color: var(--deep-space);
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--deep-space);
+            border-top: 2px solid var(--neon-pink);
+            padding: 4rem 0 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+        }
+
+        /* Accessibility & Performance */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--neon-pink);
+            color: var(--deep-space);
+            padding: 8px 16px;
+            z-index: 10000;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border-radius: 0 0 8px 0;
+            cursor: none;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--neon-cyan);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* Animations */
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Loading Animation */
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(0, 230, 255, 0.3);
+            border-top: 3px solid var(--neon-cyan);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-link {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            :root {
+                --neon-pink: #ff0066;
+                --neon-cyan: #00ffff;
+                --neon-purple: #cc00ff;
+                --white: #ffffff;
+                --deep-space: #000000;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .scanlines,
+            #vanta-bg,
+            .custom-cursor {
+                display: none !important;
+            }
+
+            body {
+                background: white !important;
+                color: black !important;
+            }
+
+            section {
+                break-inside: avoid;
+            }
+        }
+
+        /* Fix: fade-in.visible animation should be here */
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='tailwind.css') }}">
+    </head>
+<body>
+    <canvas id="matrixRain" aria-hidden="true"></canvas>
+    <a href="#main-content" class="skip-link">Pular para conteúdo</a>
+
+    <header id="header">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="#inicio" class="logo" aria-label="Prosa Tech - Página inicial">
+                <img class="logo-icon" src="{{ url_for('static', filename='logo.png') }}" alt="">
+                Prosa Tech Cybersec
+            </a>
+            <nav aria-label="Navegação principal">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#portfolio">Portfólio</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="https://prosa-nfc.vercel.app/" target="_blank" rel="noopener noreferrer">Contato</a></li>
+                </ul>
+            </nav>
+            <label class="language-picker">
+                <span class="language-picker-label" id="languagePickerLabel">Idioma</span>
+                <select id="languagePicker" aria-labelledby="languagePickerLabel">
+                    <option value="pt">Português</option>
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                </select>
+            </label>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="inicio" class="hero">
+            <div class="hero-content container mx-auto px-4">
+                <div class="hero-subtitle fade-in">Arquiteta em Cibersegurança</div>
+                <h1 class="fade-in" data-text="Ana Caroline Santos">Ana Caroline Santos</h1>
+                <p class="fade-in">
+                    Democratizando a cibersegurança com um toque feminino. Transformo conceitos complexos em conteúdo acessível para empoderar mulheres na tecnologia.
+                </p>
+
+                <aside class="availability-panel fade-in" aria-label="Disponibilidade profissional">
+                    <div class="availability-heading">
+                        <span class="availability-indicator" aria-hidden="true"></span>
+                        <h2>Disponível para novas oportunidades</h2>
+                    </div>
+                    <p class="availability-intro">Estou disposta a agregar ao seu time e busco uma oportunidade de emprego.</p>
+                    <dl class="availability-details">
+                        <div>
+                            <dt>Cargos</dt>
+                            <dd>Analista de Segurança da Informação · Penetration Tester</dd>
+                        </div>
+                        <div>
+                            <dt>Modalidade</dt>
+                            <dd>Remoto, de preferência; aceito híbrido ou presencial.</dd>
+                        </div>
+                        <div>
+                            <dt>Localidades</dt>
+                            <dd>São Paulo, SP · Costa Rica · San José, Costa Rica · Heredia, Costa Rica · Cartago, Costa Rica</dd>
+                        </div>
+                        <div>
+                            <dt>Data de início</dt>
+                            <dd>Imediatamente · estou me candidatando agora</dd>
+                        </div>
+                        <div>
+                            <dt>Tipo de emprego</dt>
+                            <dd>Tempo integral</dd>
+                        </div>
+                    </dl>
+                </aside>
+
+                <div class="hero-stats fade-in">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="3511">0</span>
+                        <span class="stat-label">Seguidores</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="23000">0</span>
+                        <span class="stat-label">Visualizações</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-label">Mulheres Capacitadas</span>
+                    </div>
+                </div>
+
+                <div class="fade-in">
+                    <a href="#portfolio" class="cyber-btn interactive">
+                        <span>🚀 Conheça meu trabalho</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="bg-deep-space">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title">Sobre Mim</h2>
+                <div class="about-intro-grid">
+                    <div class="about-photo-column slide-in-left">
+                        <div class="relative about-photo-frame">
+                            <img src="{{ url_for('static', filename='me.jpeg') }}"
+                                 alt="Ana Caroline Santos no universo visual do Prosa Tech"
+                                 class="about-photo"
+                                 loading="lazy">
+                        </div>
+                    </div>
+                    <div class="slide-in-right about-copy-panel">
+                        <div class="about-intro-copy">
+                            <p class="text-lg leading-relaxed">
+                                Sou <strong class="text-neon-pink">Ana Caroline Santos</strong> — pros mais próximos, Carol; pra outros, Chihiro. Sou profissional de Segurança da Informação, estudante de Defesa Cibernética na <a class="fiap-link" href="https://www.fiap.com.br/" target="_blank" rel="noopener noreferrer">FIAP</a> e criadora do <strong class="text-neon-cyan">Prosa Tech</strong>.
+                            </p>
+                            <p class="text-lg leading-relaxed">
+                                Atuo com Security Engineering, Purple Team, infraestrutura crítica, resposta a incidentes e gestão de vulnerabilidades. Minha experiência inclui XDR/EDR, Firewall, DLP, CASB, Linux e Kubernetes. A base em segurança defensiva também orienta meu desenvolvimento em Red Team, pentest, segurança de aplicações, reconhecimento e pesquisa de vulnerabilidades, com prática em laboratórios e CTFs.
+                            </p>
+                            <div class="about-profile-links" aria-label="Perfis profissionais">
+                                <a href="https://www.linkedin.com/in/carolsnt/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+                                <a href="https://github.com/carolsnt" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-details">
+                            <div class="resume-section experience-section">
+                                <h3 class="resume-heading">Experiência profissional</h3>
+                                <div class="experience-list">
+                                    <article class="experience-item">
+                                        <div class="experience-heading">
+                                            <h4>Engenheira de Segurança da Informação</h4>
+                                            <span>PagBank · fev–ago 2026</span>
+                                        </div>
+                                        <p>Atuação em infraestrutura crítica de alta disponibilidade, Linux e Kubernetes, resposta a incidentes, troubleshooting e análise de causa raiz. Experiência com SRE, correlação de alertas, ciclo de vida de certificados e gestão de segredos e credenciais com Vault.</p>
+                                    </article>
+                                    <article class="experience-item">
+                                        <div class="experience-heading">
+                                            <h4>Arquiteta de Segurança da Informação</h4>
+                                            <span>Porto Seguro · ago 2024–abr 2025</span>
+                                        </div>
+                                        <p>Administração de antimalware, EDR/XDR, DLP, CASB e antispam; gestão de vulnerabilidades e Threat Modeling; MFA com YubiKey e processos de IAM com SailPoint. Atuei em simulações de phishing, investigação de incidentes e integração de práticas DevSecOps.</p>
+                                    </article>
+                                    <article class="experience-item">
+                                        <div class="experience-heading">
+                                            <h4>Fundadora &amp; Desenvolvedora</h4>
+                                            <span>Prosa Tech · dez. 2023–atual</span>
+                                        </div>
+                                        <p>Crio soluções com Python, JavaScript e Tailwind CSS para segurança, automação e web, além de conduzir mentorias gratuitas para iniciantes em tecnologia e cibersegurança.</p>
+                                        <ul class="experience-project-list">
+                                            <li><strong>Kindin:</strong> API em Python para enviar eBooks do Telegram ao Kindle.</li>
+                                            <li><strong>Landing Page Coritiba:</strong> API de atualização em tempo real de resultados.</li>
+                                            <li><strong>Agronegócio:</strong> sistema de estoque, otimização de rotas e previsão de colheita hidropônica.</li>
+                                            <li>Ferramenta de análise de rede e gerador de senhas criptografadas.</li>
+                                        </ul>
+                                    </article>
+                                </div>
+                            </div>
+
+                            <div class="resume-section volunteer-section">
+                                <div class="volunteer-section-heading">
+                                    <div>
+                                        <span class="education-eyebrow">IMPACTO NA COMUNIDADE</span>
+                                        <h3 class="resume-heading">Voluntariado &amp; liderança</h3>
+                                    </div>
+                                    <span class="volunteer-count">09 EXPERIÊNCIAS</span>
+                                </div>
+                                <div class="volunteer-list">
+                                    <article class="volunteer-item volunteer-featured">
+                                        <div class="volunteer-heading">
+                                            <div>
+                                                <span class="volunteer-type">MENTORIA · TECNOLOGIA</span>
+                                                <h4>Founder &amp; CEO · Prosa Tech</h4>
+                                            </div>
+                                            <span>dez. 2023 – atual</span>
+                                        </div>
+                                        <p>Ofereço mentorias gratuitas e ajudo pessoas iniciantes a organizar os estudos e dar os primeiros passos na área de tecnologia.</p>
+                                    </article>
+                                    <article class="volunteer-item">
+                                        <div class="volunteer-heading">
+                                            <div>
+                                                <span class="volunteer-type">EDUCAÇÃO · CIBERSEGURANÇA</span>
+                                                <h4>Representante de sala · <a class="volunteer-org-link" href="https://mentebinaria.com.br/" target="_blank" rel="noopener noreferrer">Mente Binária <span aria-hidden="true">↗</span></a></h4>
+                                            </div>
+                                            <span>ago. 2026 – atual</span>
+                                        </div>
+                                        <p>No programa Do Zero Ao Um, apoio a jornada de aprendizagem com materiais de estudo, suporte técnico e aproximação entre estudantes, professores e coordenação.</p>
+                                        <ul>
+                                            <li>Faço mini-aulas e ajudo a esclarecer dúvidas em um ambiente acolhedor.</li>
+                                            <li>Compartilho cursos, livros, eventos e oportunidades em Segurança da Informação.</li>
+                                            <li>Apoio colegas na revisão de currículos e perfis profissionais no LinkedIn.</li>
+                                        </ul>
+                                    </article>
+                                    <article class="volunteer-item">
+                                        <div class="volunteer-heading">
+                                            <div>
+                                                <span class="volunteer-type">MENTORIA · SERVIÇO SOCIAL</span>
+                                                <h4>Voluntária · Orientador Anjo</h4>
+                                            </div>
+                                            <span>out. 2025 – atual</span>
+                                        </div>
+                                    </article>
+                                    <article class="volunteer-item">
+                                        <div class="volunteer-heading">
+                                            <div>
+                                                <span class="volunteer-type">COMUNIDADE · CIBERSEGURANÇA</span>
+                                                <h4>Voluntária · <a class="volunteer-org-link" href="https://www.instagram.com/bsidessp/" target="_blank" rel="noopener noreferrer">BSidesSP <span aria-hidden="true">↗</span></a></h4>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="volunteer-item">
+                                        <div class="volunteer-heading">
+                                            <div>
+                                                <span class="volunteer-type">CONFERÊNCIA · CIBERSEGURANÇA</span>
+                                                <h4>Voluntária · <a class="volunteer-org-link" href="https://307conf.com/" target="_blank" rel="noopener noreferrer">307conf <span aria-hidden="true">↗</span></a></h4>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="volunteer-item">
+                                        <div class="volunteer-heading">
+                                            <div>
+                                                <span class="volunteer-type">EDUCAÇÃO · CONSCIENTIZAÇÃO EM SEGURANÇA</span>
+                                                <h4>Voluntária · <a class="volunteer-org-link" href="https://hackerrangers.com/" target="_blank" rel="noopener noreferrer">Hacker Rangers Experience <span aria-hidden="true">↗</span></a></h4>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="volunteer-item">
+                                        <div class="volunteer-heading">
+                                            <div>
+                                                <span class="volunteer-type">LIDERANÇA · EDUCAÇÃO TÉCNICA</span>
+                                                <h4>Representante de sala · ETEC Martin Luther King</h4>
+                                            </div>
+                                            <span>jan. – mar. 2026</span>
+                                        </div>
+                                        <p>Na turma de Mecatrônica, organizei demandas e comunicações, acompanhei prazos e apoiei a articulação entre estudantes, docentes e coordenação.</p>
+                                    </article>
+                                    <article class="volunteer-item">
+                                        <div class="volunteer-heading">
+                                            <div>
+                                                <span class="volunteer-type">APOIO COMUNITÁRIO · TECNOLOGIA</span>
+                                                <h4>Suporte geral na capela · Santa Casa de São Paulo</h4>
+                                            </div>
+                                            <span>jan. 2010 – atual</span>
+                                        </div>
+                                        <p>Contribuo com atividades da capela, eventos e campanhas para pessoas hospitalizadas. Também ofereço suporte e manutenção de computadores e eletrônicos à comunidade, beneficiando cerca de 20 pessoas por mês.</p>
+                                    </article>
+                                    <article class="volunteer-item">
+                                        <div class="volunteer-heading">
+                                            <div>
+                                                <span class="volunteer-type">CONSTRUÇÃO · ENGAJAMENTO COMUNITÁRIO</span>
+                                                <h4>Voluntária de construção · Superação ORC</h4>
+                                            </div>
+                                            <span>jun. 2026</span>
+                                        </div>
+                                        <p>Participei da construção e organização de uma capela comunitária, colaborando na preparação do espaço, restauração de bancos e integração com moradores e crianças da comunidade.</p>
+                                    </article>
+                                </div>
+                            </div>
+
+                            <div class="resume-highlights">
+                                <article class="resume-panel education-panel">
+                                    <div class="education-feature">
+                                        <span class="education-eyebrow">FORMAÇÃO ACADÊMICA</span>
+                                        <h3 class="education-title">Defesa<br class="education-title-break"> Cibernética</h3>
+                                        <p class="education-degree">Tecnóloga</p>
+                                        <a class="education-school" href="https://www.fiap.com.br/" target="_blank" rel="noopener noreferrer">
+                                            FIAP <span aria-hidden="true">↗</span>
+                                        </a>
+                                        <span class="education-period">2025 — 2027</span>
+                                    </div>
+                                    <div class="course-collection">
+                                        <div class="course-collection-heading">
+                                            <div>
+                                                <span class="education-eyebrow">APRENDIZADO CONTÍNUO</span>
+                                                <h3 class="resume-heading">Cursos &amp; especializações</h3>
+                                            </div>
+                                            <span class="course-count">06 FORMAÇÕES</span>
+                                        </div>
+                                        <div class="course-grid">
+                                            <article class="course-card">
+                                                <span class="course-index">01</span>
+                                                <span class="course-category">INVESTIGAÇÃO DIGITAL</span>
+                                                <h4>Perícia Forense Computacional</h4>
+                                            </article>
+                                            <article class="course-card">
+                                                <span class="course-index">02</span>
+                                                <span class="course-category">CLOUD &amp; AGILIDADE</span>
+                                                <h4>DevOps &amp; Agile Culture</h4>
+                                            </article>
+                                            <article class="course-card">
+                                                <span class="course-index">03</span>
+                                                <span class="course-category">CYBERSECURITY</span>
+                                                <h4>Cybersecurity Hacker Skills</h4>
+                                            </article>
+                                            <article class="course-card">
+                                                <span class="course-index">04</span>
+                                                <span class="course-category">LABORATÓRIO PRÁTICO</span>
+                                                <h4>Segurança Cibernética</h4>
+                                                <p>Febraban / GoHacking</p>
+                                            </article>
+                                            <article class="course-card">
+                                                <span class="course-index">05</span>
+                                                <span class="course-category">SEGURANÇA NO CICLO DEV</span>
+                                                <h4>DevSecOps</h4>
+                                            </article>
+                                            <article class="course-card">
+                                                <span class="course-index">06</span>
+                                                <span class="course-category">DESENVOLVIMENTO</span>
+                                                <h4>Introdução à Programação</h4>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="resume-panel languages-panel">
+                                    <h3 class="resume-heading">Idiomas</h3>
+                                    <p>Português, Espanhol e Libras (nativos ou bilíngues)</p>
+                                    <p class="resume-muted">Inglês (profissional) · Alemão, Francês e Latim (básicos)</p>
+                                </article>
+                                <article class="resume-panel additional-education-panel">
+                                    <h3 class="resume-heading">Formação complementar</h3>
+                                    <p><strong>ETEC Martin Luther King</strong> · Ensino Técnico em Mecatrônica</p>
+                                    <p class="resume-muted">jan. – jun. 2026</p>
+                                    <p><strong>Cultura Inglesa</strong> · Inglês intermediário · 2014–2017</p>
+                                </article>
+                                <article class="resume-panel certifications-panel">
+                                    <h3 class="resume-heading">Certificações &amp; programas</h3>
+                                    <ul class="certification-list">
+                                        <li>Cyber Academy 2025/2</li>
+                                        <li>Penetration Testing Professional</li>
+                                        <li>DevSecOps</li>
+                                        <li>Cybersecurity Hacker Skills</li>
+                                        <li>Sensibilização para a Segurança Digital</li>
+                                    </ul>
+                                </article>
+                            </div>
+
+                            <div class="resume-section skills-section">
+                                <h3 class="resume-heading">Competências técnicas</h3>
+                                <div class="skill-chips" aria-label="Competências técnicas">
+                                    <span>Security Engineering</span><span>Incident Response</span><span>Vulnerability Management</span>
+                                    <span>Linux</span><span>Kubernetes</span><span>SRE</span><span>IAM</span><span>DevSecOps</span>
+                                    <span>Python</span><span>JavaScript</span><span>Vue.js</span><span>Nmap</span><span>Wireshark</span>
+                                    <span>Nessus</span><span>Metasploit</span><span>Kali Linux</span><span>MITRE ATT&amp;CK</span>
+                                    <span>OWASP</span><span>NIST</span><span>ISO 27001</span>
+                                    <span>Red Team</span><span>Pentest</span><span>Application Security</span>
+                                    <span>OSINT</span><span>Testes de Segurança</span><span>Avaliação de Vulnerabilidades</span>
+                                    <span>Purple Team</span><span>XDR/EDR</span><span>Firewall</span><span>DLP</span><span>CASB</span>
+                                    <span>Reconhecimento</span><span>Pesquisa de Vulnerabilidades</span><span>Exploitation</span>
+                                    <span>Avaliações de Segurança de TI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="bg-deep-space">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title">Meus Projetos</h2>
+                <div class="project-grid">
+                    <div class="project-card fade-in interactive" tabindex="0" aria-label="Projeto Prosa Tech Channel">
+                        <div class="project-terminal" aria-label="Terminal visual do canal Prosa Tech">
+                            <div class="project-terminal-bar">
+                                <span class="terminal-lights" aria-hidden="true"><i></i><i></i><i></i></span>
+                                <span class="terminal-path">~/prosa-tech/channel</span>
+                                <span class="terminal-live">LIVE</span>
+                            </div>
+                            <div class="project-terminal-output" aria-hidden="true">
+                                <p><span class="terminal-prompt">carol@prosa:~$</span> ./connect --channel</p>
+                                <p class="terminal-muted">[+] alvo: youtube.com/@prosatechchannel</p>
+                                <p class="terminal-success">[OK] canal encontrado<span class="terminal-cursor">_</span></p>
+                                <div class="terminal-progress"><span></span></div>
+                            </div>
+                        </div>
+                        <div class="project-card-content">
+                            <h3>🎬 Prosa Tech Channel</h3>
+                            <p>Canal no YouTube com +135 seguidores, oferecendo tutoriais de cibersegurança em linguagem acessível para iniciantes e profissionais.</p>
+                            <div class="project-stats">
+                                <span class="stat"><i class="fas fa-eye"></i> 746 views</span>
+                                <span class="stat"><i class="fas fa-users"></i> 135 subs</span>
+                                <span class="stat"><i class="fas fa-video"></i> 3 vídeos</span>
+                            </div>
+                            <a href="https://youtube.com/@prosatechchannel" class="cyber-btn interactive" target="_blank" rel="noopener">
+                                <span>🔴 Assistir Canal</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in interactive" tabindex="0" aria-label="Projeto Instagram Prosa Tech">
+                        <div class="project-terminal" aria-label="Terminal visual do Instagram Prosa Tech">
+                            <div class="project-terminal-bar">
+                                <span class="terminal-lights" aria-hidden="true"><i></i><i></i><i></i></span>
+                                <span class="terminal-path">~/prosa-tech/social</span>
+                                <span class="terminal-live">LIVE</span>
+                            </div>
+                            <div class="project-terminal-output" aria-hidden="true">
+                                <p><span class="terminal-prompt">carol@prosa:~$</span> ./scan --profile</p>
+                                <p class="terminal-muted">[+] alvo: instagram.com/prosa.tech</p>
+                                <p class="terminal-success">[OK] perfil carregado<span class="terminal-cursor">_</span></p>
+                                <div class="terminal-progress"><span></span></div>
+                            </div>
+                        </div>
+                        <div class="project-card-content">
+                            <h3>📱 Instagram @prosa.tech</h3>
+                            <p>Conteúdo diário sobre segurança digital em formato visual, com dicas práticas e alertas sobre ameaças atuais.</p>
+                            <div class="project-stats">
+                                <span class="stat"><i class="fas fa-heart"></i> 23K likes</span>
+                                <span class="stat"><i class="fas fa-users"></i> 4K followers</span>
+                                <span class="stat"><i class="fas fa-images"></i> 30+ posts</span>
+                            </div>
+                            <a href="https://instagram.com/prosa.tech" class="cyber-btn interactive" target="_blank" rel="noopener">
+                                <span>📷 Seguir Perfil</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in interactive" tabindex="0" aria-label="Projeto Kindin App">
+                        <div class="project-terminal" aria-label="Terminal visual do Kindin App">
+                            <div class="project-terminal-bar">
+                                <span class="terminal-lights" aria-hidden="true"><i></i><i></i><i></i></span>
+                                <span class="terminal-path">~/projects/kindin-app</span>
+                                <span class="terminal-live">READY</span>
+                            </div>
+                            <div class="project-terminal-output" aria-hidden="true">
+                                <p><span class="terminal-prompt">carol@prosa:~$</span> python send_book.py</p>
+                                <p class="terminal-muted">[+] formato detectado: .epub</p>
+                                <p class="terminal-success">[OK] pronto para Kindle<span class="terminal-cursor">_</span></p>
+                                <div class="terminal-progress"><span></span></div>
+                            </div>
+                        </div>
+                        <div class="project-card-content">
+                            <h3>📖 Kindin App</h3>
+                            <p>Aplicação web que facilita o envio de eBooks no formato EPUB diretamente para dispositivos Kindle via email.</p>
+                            <div class="project-stats">
+                                <span class="stat"><i class="fas fa-download"></i> 5 downloads</span>
+                                <span class="stat"><i class="fas fa-star"></i> 4.8★ rating</span>
+                                <span class="stat"><i class="fas fa-book"></i> 50 books sent</span>
+                            </div>
+                            <a href="https://kindin.app" class="cyber-btn interactive" target="_blank" rel="noopener">
+                                <span>📲 Usar App</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in interactive" tabindex="0" aria-label="Projeto CyberShield Pro">
+                        <div class="project-terminal" aria-label="Terminal visual do CyberShield Pro">
+                            <div class="project-terminal-bar">
+                                <span class="terminal-lights" aria-hidden="true"><i></i><i></i><i></i></span>
+                                <span class="terminal-path">~/projects/cybershield</span>
+                                <span class="terminal-live">SECURE</span>
+                            </div>
+                            <div class="project-terminal-output" aria-hidden="true">
+                                <p><span class="terminal-prompt">carol@prosa:~$</span> ./shield --status</p>
+                                <p class="terminal-muted">[+] monitoramento: ativo</p>
+                                <p class="terminal-success">[OK] sistemas protegidos<span class="terminal-cursor">_</span></p>
+                                <div class="terminal-progress"><span></span></div>
+                            </div>
+                        </div>
+                        <div class="project-card-content">
+                            <h3>🔒 CyberShield Pro</h3>
+                            <p>Sistema inteligente de proteção digital com IA, criptografia avançada e monitoramento 24/7 para empresas.</p>
+                            <div class="project-stats">
+                                <span class="stat"><i class="fas fa-shield-alt"></i> 99.9% uptime</span>
+                                <span class="stat"><i class="fas fa-building"></i> 50+ empresas</span>
+                                <span class="stat"><i class="fas fa-bug"></i> 0 breaches</span>
+                            </div>
+                            <a href="#" class="cyber-btn interactive">
+                                <span>🔐 Saiba Mais</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="depoimentos" class="bg-deep-space">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title">O que dizem sobre meu trabalho</h2>
+                <div class="recommendations-intro">
+                    <p>27 recomendações de colegas, lideranças, mentores e professores que acompanharam minha trajetória em tecnologia e cibersegurança.</p>
+                    <a href="https://www.linkedin.com/in/carolsnt/" target="_blank" rel="noopener noreferrer">
+                        Ver perfil no LinkedIn <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+                <div class="testimonials-grid">
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">ESTUDARAM JUNTOS · 23 SET. 2026</span>
+                        <p class="testimonial-text">Tenho a oportunidade de estudar com a Carol, Durante a nossa formação em Cibersegurança e, ao longo desse período, posso acompanhar de perto o seu crescimento e dedicação à área. A Carol destaca-se pelo forte conhecimento técnico, participação ativa em CTFs e grupos de estudo e pela constante procura por novos conhecimentos. Além disso, assumiu a responsabilidade pelas Cyber Divas, grupo de estudos da nossa faculdade dedicado a mulheres na Cibersegurança, demonstrando iniciativa, liderança e vontade de partilhar conhecimento. É uma pessoa extremamente participativa, dedicada e que não se limita ao conteúdo da faculdade. Está sempre envolvida, ajudando a resolver desafios e aprofundando os seus conhecimentos em Cybersecurity. Recomendo a Carol sem hesitar para oportunidades na área. É uma profissional com conhecimento, iniciativa e, acima de tudo, muita vontade de evoluir, características que acredito que podem fazer a diferença em qualquer equipa de Cibersegurança.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">GS</span><div class="author-info"><h3>Guilherme Silva</h3><span>INETUM · Field Support · Cyber Security · GRC · SOC</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">ESTUDARAM JUNTOS · 13 JUN. 2026</span>
+                        <p class="testimonial-text">Excelente profissional! Tem domínio técnico aprofundado em demandas red team, grande capacidade analítica para solucionar problemas críticos. Além de ser excelente no compartilhamento de informações para capacitação de times.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">RC</span><div class="author-info"><h3>Renato Cunha</h3><span>Segurança Digital · Criador de conteúdo · Palestrante</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">ESTUDARAM JUNTAS · 24 ABR. 2026</span>
+                        <p class="testimonial-text">Recomento a Ana Caroline de olhos fechados! É uma excelente profissional, atenta aos detalhes e sempre dedicada em tudo o que faz. Admiro a constante busca dela por evolução, sempre se aprimorando e incentivando as pessoas ao mesmo. Além disso, o trabalho dela com a plataforma Prosa Tech, voltada para ensino de mulheres é uma prova palpável do valor que ela dá ao ensino e à valorização da área. Aprendo muito sempre e me inspiro com uma mulher assim como exemplo dentro da tecnologia.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">LN</span><div class="author-info"><h3>Luana N.</h3><span>Cybersecurity · Segurança da Informação</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">MESMA EQUIPE · 22 ABR. 2026</span>
+                        <p class="testimonial-text">Ana Caroline é uma profissional de destaque na área de Tecnologia da Informação. Sua trajetória é marcada por uma busca constante por conhecimento, demonstrando curiosidade intelectual e disciplina acima da média. Ela se destaca pelo esforço consistente em evoluir tecnicamente, sempre aprofundando seus estudos e aplicando na prática os conceitos que aprende. Como desenvolvedora, demonstra domínio técnico aliado a uma comunicação clara e objetiva, o que facilita o trabalho em equipe e a resolução de problemas. Além disso, sua iniciativa em expandir seus horizontes para a área de segurança da informação, com foco em pentest e red team, evidencia não apenas ambição profissional, mas também visão ampla e estratégica sobre aplicações gerais no ramo da tecnologia. Sua capacidade de aprender, adaptar-se e colaborar faz dela uma profissional completa e em constante evolução, pronta para enfrentar desafios cada vez mais complexos.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">MJ</span><div class="author-info"><h3>Magno Jovino</h3><span>Assistente de Segurança · PagBank</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">TRABALHARAM EM EQUIPES DIFERENTES · 14 ABR. 2026</span>
+                        <p class="testimonial-text">Recomendo a Carol com muita confiança. Durante o período em que trabalhamos juntas, ela sempre se destacou por ser extremamente esforçada, comunicativa e dedicada. Demonstrou constantemente um grande interesse em aprender, buscando evoluir tanto técnica quanto profissionalmente. Sua vontade genuína de aprender e crescer é um dos seus maiores diferenciais. Sem dúvidas, é uma profissional com grande potencial e que agrega valor por onde passa.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">BG</span><div class="author-info"><h3>Beatriz Guaita</h3><span>Cyber Security Analyst · SOC · Blue Team · Forense Digital</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">ESTUDARAM JUNTOS · 13 ABR. 2026</span>
+                        <p class="testimonial-text">A Ana Caroline foi uma das melhores parcerias durante a faculdade na FIAP. O que mais chama atenção nela é o espírito de equipe e a facilidade em descomplicar temas difíceis de segurança. Ela é CDF mesmo, super dedicada aos estudos, e isso fica nítido na habilidade que ela tem para resolver os CTFs e os desafios técnicos que a FIAP propõe. Dá para ver que ela tem uma vocação clara para a área e é o tipo de profissional que qualquer time de Cyber gostaria de ter por perto.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">DG</span><div class="author-info"><h3>Douglas Gois</h3><span>IT Coordinator · Cyber Defense · Vulnerability Management</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">MESMA EQUIPE · 13 ABR. 2026</span>
+                        <p class="testimonial-text">Tive a oportunidade de trabalhar com a Ana Caroline e posso destacar sua dedicação, responsabilidade e forte conhecimento em segurança da informação. Sempre proativa, ela busca as melhores soluções e contribui muito para o time. Além disso, possui ótima comunicação e trabalha muito bem em equipe, tornando o ambiente mais colaborativo e eficiente. Recomendo a Ana Caroline com confiança para qualquer oportunidade na área.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">VC</span><div class="author-info"><h3>Vinicios Carvalho Silva</h3><span>Segurança da Informação · Pentest · Threat Hunting</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">ESTUDARAM JUNTAS · 25 JAN. 2026</span>
+                        <p class="testimonial-text">Tive a oportunidade de estudar e colaborar de perto com a durante nossa graduação em Defesa Cibernética na FIAP, e o que mais me chamou a atenção foi sua curva de aprendizado rápido. A cibersegurança exige uma atualização constante, e a Ana Caroline demonstrou uma facilidade incrível para absorver conceitos complexos e aplicá-los em projetos práticos. Além de sua competência técnica e raciocínio lógico, ela possui uma postura extremamente colaborativa e ética, qualidades indispensáveis em nossa área. Ajudando também no meu aprendizado.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">CJ</span><div class="author-info"><h3>Caroline Justino</h3><span>Estagiária de Cyber · Eval Digital</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">SUPERVISÃO DIRETA · 28 JUL. 2025</span>
+                        <p class="testimonial-text">Tenho o prazer de recomendar Ana Caroline, aluna de Defesa Cibernética, por sua dedicação e comprometimento com a área de segurança da informação. Ao longo de seu aprendizado, demonstrou curiosidade técnica, proatividade na resolução de problemas e um interesse genuíno em aprimorar seus conhecimentos sobre cibersegurança, redes e análise de ameaças.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">GK</span><div class="author-info"><h3>Gustavo K.</h3><span>Malware Reverse Engineer · Group-IB</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">FOI MEU PROFESSOR · 24 JUL. 2024</span>
+                        <p class="testimonial-text">Ana Caroline foi uma aluna muito engajada em busca de conhecimento, questionadora e com o pensamento fora da curva.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">TR</span><div class="author-info"><h3>Thiago Rinaldi</h3><span>Senior Cyber Security Architect · Porto Seguro</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">FOI MINHA PROFESSORA · 29 MAI. 2024</span>
+                        <p class="testimonial-text">Como monitora da Ana Caroline, pude observar seu notável engajamento e proatividade. Sua dedicação é evidente e estou confiante em recomendá-la para oportunidades futuras. Foi uma experiência gratificante orientá-la.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">TC</span><div class="author-info"><h3>Thalya Coimbra</h3><span>Front-end Developer · React · React Native · TypeScript</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">FOI MEU PROFESSOR · 24 MAI. 2024</span>
+                        <p class="testimonial-text">Ana se mostrou muito interessada e curiosa durante nossa aula no instituto Porto. Não se contenta em entender apenas superficialmente a disciplina discutida, gosta de ir afundo no conhecimento e de relacionar com outras áreas e disciplinas. Tem um futuro brilhante pela frente.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">RT</span><div class="author-info"><h3>Rodrigo Teixeira</h3><span>Engenheiro de Controle e Automação · Missão crítica</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">FOI MEU PROFESSOR · 04 MAI. 2024</span>
+                        <p class="testimonial-text">A Ana Caroline se mostrou super interessada na aula, com diversas perguntas, sempre com bastante coerência. Se continuar assim, vai muito longe.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">LC</span><div class="author-info"><h3>Luis Thiago Carnicelli</h3><span>Governança · Gestão de Ativos de TI · ITIL</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">ESTUDARAM JUNTAS · 26 ABR. 2024</span>
+                        <p class="testimonial-text">Tive o prazer de conhecer a Ana durante o curso na instituição Porto. Desde o primeiro dia de aula, ela mostrou uma incrível empatia pelos colegas, sempre disposta a ajudar e muito comunicativa. Além disso, Ana demonstrou ser uma pessoa extremamente inteligente e dedicada em tudo o que faz.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">LC</span><div class="author-info"><h3>Lara Carvalho</h3><span>Marketing Data · Marketing Automation · Salesforce CRM</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">FOI MEU PROFESSOR · 26 ABR. 2024</span>
+                        <p class="testimonial-text">Ana foi uma aluna super engajada e que ajudou todos a resolverem suas duvidas. Ela demonstrou grande interesse na área e aptidão para TI!</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">JM</span><div class="author-info"><h3>Jonathan Mateus Souza de Moraes</h3><span>Arquiteto de TI · Arquitetura Corporativa · Back-end</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">FOI MEU PROFESSOR · 22 ABR. 2024</span>
+                        <p class="testimonial-text">A Carol é minha aluna na formação de tecnologia do Instituto Porto e destaca-se pela sua dedicação e rápido aprendizado. Seu entusiasmo e participação ativa nos exercícios propostos refletem claramente no seu desenvolvimento. A nova geração dos profissionais de tecnologia vem forte!</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">CF</span><div class="author-info"><h3>Camilo Fonseca</h3><span>SRE · Desenvolvimento · QA · Transformação Digital</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">FOI MEU PROFESSOR · 21 ABR. 2024</span>
+                        <p class="testimonial-text">A Ana Carolina é uma jovem profissional talentosa e autodidata. Desaprendida, desembaraçada, comunica e expressa-se muito bem. Tive a oportunidade de tê-la como aluna em uma das turmas de capacitação em Tecnologia da Informação e pude notar que demonstra grande disposição em evoluir ainda mais o conhecimento já existente nas disciplinas associadas a TI, sempre trazendo ótimas contribuições, atualizações. Eu não tenho dúvidas de que avançará em voos cada vez mais altos em sua jornada profissional</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">MT</span><div class="author-info"><h3>Marcos Thomazini</h3><span>Governança de TI · Lean Six Sigma Black Belt</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">FOI MINHA PROFESSORA · 09 JAN. 2024</span>
+                        <p class="testimonial-text">Carol foi minha aluna no curso de Introdução à Programaçãon do Minas Programam. Ela se mostrou engajada, dedicada e interessada. Tenho certeza que seria uma adição muito proativa a qualquer time.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">AN</span><div class="author-info"><h3>Amynata Nepomuceno</h3><span>Product Designer · UX/UI</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">FOI MINHA PROFESSORA · 09 JAN. 2024</span>
+                        <p class="testimonial-text">Tive o prazer de ensinar Frontend e Lógica de Programação para a Ana Caroline durante o curso do Minas Programam na edição de 2024.2. A Ana se mostrou uma ótima e dedicada aluna ao não apenas participar das aulas ao vivo mas também ao ir atrás e tirar dúvidas comigo e com outras professores e monitoras. Isso demonstra proatividade e compromisso com o aprendizado. Sei que ela tem um futuro brilhante pela frente!</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">LL</span><div class="author-info"><h3>Luiza Lopes</h3><span>Automação · Engenharia e Análise de Dados · Tecnologia</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">FOI MINHA PROFESSORA · 07 JAN. 2024</span>
+                        <p class="testimonial-text">Conheci a Ana Caroline quando ministrei aulas no Minas Programam sobre UX Design. Ela é uma pessoa muito dedicada, sempre em busca de evolução, constantemente estudando e praticando para ampliar seu repertório e conhecimento. Se você deseja contratá-la e trabalhar com a Ana, será muito privilegiado, pois terá uma excelente profissional e colega de trabalho.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">MB</span><div class="author-info"><h3>Manuela Bernadino</h3><span>UX Research · Pesquisa · Mentoria de carreira</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">FOI MINHA PROFESSORA · 03 JAN. 2024</span>
+                        <p class="testimonial-text">A Ana é dedicada e resiliente e não se deixa vencer pelas adversidades. Fui sua professora de Projetos  Ágeis no Minas Programam. Ela tratou as colegas com simplicidade e empatia. Destaca-se pela sua capacidade de resolver problemas inesperados e de gerir conflitos entre colegas. Tê-la em sua empresa será uma escolha de sucesso!</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">LD</span><div class="author-info"><h3>Laila Drumond</h3><span>E-commerce · Marketing Growth · UX · Product Analytics</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">FOI MINHA MENTORA · 18 DEZ. 2023</span>
+                        <p class="testimonial-text">Pude colaborar na turma do Minas Programam em que a Ana Caroline participou. Na oportunidade focamos em construir um portfólio em formato de landing page seguindo os princípios de design. Nessa experiência pude acompanhar a dedicação da Ana em fazer entregas com qualidade e aplicando todo o conhecimento que ela adquiriu ao longo da formação. Ana apresenta habilidades de comunicação, colaboração e dedicação.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">KP</span><div class="author-info"><h3>Karina Paula</h3><span>Design Manager · iFood</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">FOI MINHA PROFESSORA · 06 DEZ. 2023</span>
+                        <p class="testimonial-text">É com grande satisfação que recomendo Ana Caroline, que foi uma das minhas alunas do curso de Introdução à Programação do Minas Programam. Sua jornada foi marcada por um incrível crescimento e dedicação, evidenciando sua paixão pela programação. Durante o curso, a Ana não apenas absorveu os conceitos com facilidade, mas também contribuiu para um ambiente de aprendizado colaborativo, destacando-se como uma colega comprometida. Estou certa de que sua habilidade e entusiasmo a impulsionarão para conquistas ainda mais grandiosas na área de programação</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">AS</span><div class="author-info"><h3>Amanda Silva</h3><span>Software Engineer · Produtos e estratégia de tecnologia</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">MESMA EQUIPE · 14 FEV. 2023</span>
+                        <p class="testimonial-text">Ana, ou melhor, Carol, é uma pessoa extremamente organizada, eficiente e focada. Dominava e domina suas demandas como poucas pessoas. Apesar de estar na posição de aprendiz naquela época, sempre demonstrou organização, resiliência e resultados em todas as suas tarefas, garantindo o respeito e admiração de toda a equipe profissional do departamento.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">AS</span><div class="author-info"><h3>Anderson Soares Brum</h3><span>Analista de TI · Suporte técnico · Infraestrutura</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">MESMA EQUIPE · 09 FEV. 2023</span>
+                        <p class="testimonial-text">Ana Carolina, sempre foi uma funcionária com rapidez e excelência, organizada e dedicada. Posso destacar, qualidades como comunicação, habilidades com pacote Office, educação e rapidez no atendimento ao público interno e externo.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">BJ</span><div class="author-info"><h3>Bruna Jesus</h3><span>Engenharia de Software · Python · Administração</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">TRABALHARAM EM EQUIPES DIFERENTES · 16 AGO. 2022</span>
+                        <p class="testimonial-text">Profissional dedicada e focada em resultado.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">DM</span><div class="author-info"><h3>Diana Mayara</h3><span>Buyer · Strategic Sourcing</span></div></div>
+                    </article>
+                    <article class="testimonial-card fade-in">
+                        <span class="recommendation-context">SUPERVISÃO DIRETA · 13 AGO. 2022</span>
+                        <p class="testimonial-text">Excelente profissional, dedicada, pró ativa, competente, responsável, muita facilidade em aprender, comunicativa, desenvolta.</p>
+                        <div class="testimonial-author"><span class="testimonial-initials" aria-hidden="true">AS</span><div class="author-info"><h3>Ariane Silva</h3><span>Executiva Comercial · Estruturação e alta performance</span></div></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="text-neon-pink font-bold text-lg mb-4">Prosa Tech</h4>
+                    <p class="text-sm opacity-80">Democratizando a cibersegurança com um toque feminino.</p>
+                </div>
+                <div>
+                    <h4 class="text-neon-cyan font-bold text-lg mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#sobre" class="hover:text-neon-pink transition-colors">Sobre</a></li>
+                        <li><a href="#portfolio" class="hover:text-neon-pink transition-colors">Portfólio</a></li>
+                        <li><a href="https://prosa-nfc.vercel.app/" target="_blank" rel="noopener noreferrer" class="hover:text-neon-pink transition-colors">Contato</a></li>
+                        <li><a href="/blog" class="hover:text-neon-pink transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-neon-purple font-bold text-lg mb-4">Newsletter</h4>
+                    <p class="text-sm mb-4">Receba dicas semanais de cibersegurança</p>
+                    <div class="flex gap-2">
+                        <input type="email" placeholder="Seu e-mail" class="flex-1 px-3 py-2 text-sm rounded bg-gray-800 border border-gray-600">
+                        <button class="px-4 py-2 bg-neon-pink text-deep-space rounded text-sm font-bold">OK</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 text-center text-sm opacity-80">
+                <p>&copy; 2025 Prosa Tech Cybersec | Todos os direitos reservados</p>
+                <p class="mt-2">Feito com carinho de São Paulo para o mundo</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Performance: Store DOM elements
+        const elements = {
+            header: document.getElementById('header')
+        };
+
+        // Scroll-based header animation
+        let lastScrollY = window.scrollY;
+        let isScrolling = false;
+
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+
+            // Add/remove scrolled class
+            elements.header.classList.toggle('header-scrolled', currentScrollY > 50);
+
+            // Hide/show header based on scroll direction
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                elements.header.style.transform = 'translateY(-100%)';
+            } else {
+                elements.header.style.transform = 'translateY(0)';
+            }
+
+            lastScrollY = currentScrollY;
+            isScrolling = false;
+        };
+
+        window.addEventListener('scroll', () => {
+            if (!isScrolling) {
+                requestAnimationFrame(handleScroll);
+                isScrolling = true;
+            }
+        }, { passive: true });
+
+        // Smooth scrolling with offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = anchor.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Advanced Intersection Observer for animations
+        const animationObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Unobserve after animation for performance
+                    animationObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '50px 0px -50px 0px'
+        });
+
+        // Observe all animation elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+            animationObserver.observe(el);
+        });
+
+        // Counter animation for stats
+        const animateCounters = () => {
+            const counters = document.querySelectorAll('[data-count]');
+
+            counters.forEach(counter => {
+                const target = parseInt(counter.dataset.count);
+                const duration = 2000; // 2 seconds
+                const startTime = performance.now();
+
+                const updateCounter = (currentTime) => {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+
+                    // Easing function for smooth animation
+                    const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                    const current = Math.floor(target * easeOutQuart);
+
+                    // Format large numbers
+                    if (target >= 1000) {
+                        counter.textContent = (current / 1000).toFixed(current >= 1000 ? 0 : 1) + 'K';
+                    } else {
+                        counter.textContent = current.toLocaleString();
+                    }
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    }
+                };
+
+                requestAnimationFrame(updateCounter);
+            });
+        };
+
+        // Start counter animation when hero section is visible
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(animateCounters, 500); // Delay for better effect
+                    heroObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const heroSection = document.querySelector('#inicio');
+        if (heroSection) heroObserver.observe(heroSection);
+
+        // Enhanced 3D card hover effects
+        const cards = document.querySelectorAll('.project-card, .testimonial-card');
+        cards.forEach(card => {
+            let isHovering = false;
+
+            card.addEventListener('mouseenter', () => isHovering = true);
+            card.addEventListener('mouseleave', () => {
+                isHovering = false;
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            });
+
+            card.addEventListener('mousemove', (e) => {
+                if (!isHovering) return;
+
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+            });
+
+            // Keyboard navigation
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    const link = card.querySelector('a');
+                    if (link) link.click();
+                }
+            });
+        });
+
+        // Advanced form validation and submission
+        const formValidator = {
+            rules: {
+                name: {
+                    required: true,
+                    minLength: 2,
+                    pattern: /^[a-zA-ZÀ-ÿ\s]+$/
+                },
+                email: {
+                    required: true,
+                    pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+                },
+                message: {
+                    required: true,
+                    minLength: 10
+                }
+            },
+
+            validate(field, value) {
+                const rule = this.rules[field];
+                const errors = [];
+
+                if (rule.required && !value.trim()) {
+                    errors.push(`${this.getFieldName(field)} é obrigatório`);
+                }
+
+                if (rule.minLength && value.length < rule.minLength) {
+                    errors.push(`${this.getFieldName(field)} deve ter pelo menos ${rule.minLength} caracteres`);
+                }
+
+                if (rule.pattern && !rule.pattern.test(value)) {
+                    errors.push(`${this.getFieldName(field)} tem formato inválido`);
+                }
+
+                return errors;
+            },
+
+            getFieldName(field) {
+                const names = {
+                    name: 'Nome',
+                    email: 'E-mail',
+                    message: 'Mensagem'
+                };
+                return names[field] || field;
+            },
+
+            showError(field, errors) {
+                const errorElement = document.getElementById(`${field}-error`);
+                if (errorElement) {
+                    errorElement.textContent = errors[0] || '';
+                    errorElement.classList.toggle('hidden', errors.length === 0);
+                }
+            }
+        };
+
+        // Real-time form validation
+        ['name', 'email', 'message'].forEach(field => {
+            const input = document.getElementById(field);
+            if (input) {
+                input.addEventListener('blur', () => {
+                    const errors = formValidator.validate(field, input.value);
+                    formValidator.showError(field, errors);
+                });
+
+                input.addEventListener('input', () => {
+                    // Clear errors on input
+                    formValidator.showError(field, []);
+                });
+            }
+        });
+
+        // Enhanced accessibility features
+        const accessibilityManager = {
+            init() {
+                this.handleKeyboardNavigation();
+                this.handleFocusManagement();
+            },
+
+            handleKeyboardNavigation() {
+                // Skip to main content
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' && e.target.classList.contains('skip-link')) {
+                        document.getElementById('main-content').focus();
+                    }
+                });
+
+                // Enhanced tab navigation
+                const focusableElements = 'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])';
+                const focusable = document.querySelectorAll(focusableElements);
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Tab') {
+                        const firstElement = focusable[0];
+                        const lastElement = focusable[focusable.length - 1];
+
+                        if (e.shiftKey && document.activeElement === firstElement) {
+                            e.preventDefault();
+                            lastElement.focus();
+                        } else if (!e.shiftKey && document.activeElement === lastElement) {
+                            e.preventDefault();
+                            firstElement.focus();
+                        }
+                    }
+                });
+            },
+
+            handleFocusManagement() {
+                // Ensure focus is visible
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Tab') {
+                        document.body.classList.add('keyboard-nav');
+                    }
+                });
+
+                document.addEventListener('mousedown', () => {
+                    document.body.classList.remove('keyboard-nav');
+                });
+            }
+        };
+
+        accessibilityManager.init();
+
+        // Performance monitoring
+        const performanceMonitor = {
+            init() {
+                // Monitor Core Web Vitals
+                this.measureLCP();
+                this.measureFID();
+                this.measureCLS();
+            },
+
+            measureLCP() {
+                new PerformanceObserver((entryList) => {
+                    const entries = entryList.getEntries();
+                    const lastEntry = entries[entries.length - 1];
+                    console.log('LCP:', lastEntry.startTime);
+                }).observe({ entryTypes: ['largest-contentful-paint'] });
+            },
+
+            measureFID() {
+                new PerformanceObserver((entryList) => {
+                    const entries = entryList.getEntries();
+                    entries.forEach(entry => {
+                        console.log('FID:', entry.processingStart - entry.startTime);
+                    });
+                }).observe({ entryTypes: ['first-input'] });
+            },
+
+            measureCLS() {
+                let clsValue = 0;
+                new PerformanceObserver((entryList) => {
+                    entryList.getEntries().forEach(entry => {
+                        if (!entry.hadRecentInput) {
+                            clsValue += entry.value;
+                        }
+                    });
+                    console.log('CLS:', clsValue);
+                }).observe({ entryTypes: ['layout-shift'] });
+            }
+        };
+
+        // Initialize performance monitoring in development
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            performanceMonitor.init();
+        }
+
+        // Error boundary for JavaScript errors
+        window.addEventListener('error', (e) => {
+            console.error('JavaScript Error:', e.error);
+            // In production, you would send this to an error monitoring service
+        });
+
+        window.addEventListener('unhandledrejection', (e) => {
+            console.error('Unhandled Promise Rejection:', e.reason);
+            // In production, you would send this to an error monitoring service
+        });
+
+        // Initialize lazy loading for images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Newsletter subscription
+        const newsletterForm = document.querySelector('footer input[type="email"]');
+        const newsletterBtn = document.querySelector('footer button');
+
+        if (newsletterBtn) {
+            newsletterBtn.addEventListener('click', () => {
+                const email = newsletterForm.value.trim();
+                if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    newsletterBtn.textContent = '✓';
+                    newsletterBtn.style.background = 'var(--neon-green)';
+                    setTimeout(() => {
+                        newsletterBtn.textContent = 'OK';
+                        newsletterBtn.style.background = '';
+                        newsletterForm.value = '';
+                    }, 2000);
+                } else {
+                    newsletterForm.focus();
+                    newsletterForm.style.borderColor = 'var(--neon-pink)';
+                    setTimeout(() => {
+                        newsletterForm.style.borderColor = '';
+                    }, 2000);
+                }
+            });
+        }
+
+        console.log('🚀 Prosa Tech website loaded successfully!');
+        console.log('💜 Developed with love by Ana Caroline Santos');
+    </script>
+
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='i18n.js') }}" defer></script>
+
+    <!-- Schema.org additional structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Prosa Tech",
+        "url": "https://prosatech.com.br",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://prosatech.com.br/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+</body>
+</html>
