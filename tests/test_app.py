@@ -1,3 +1,5 @@
+import importlib
+import json
 import os
 import unittest
 from unittest.mock import patch
@@ -125,6 +127,33 @@ class PortfolioAppTests(unittest.TestCase):
         self.assertIn(b"Tailwind CSS v3.4.17", response.data)
         self.assertIn(b".container{width:100%}", response.data)
         response.close()
+
+    def test_vercel_framework_and_public_assets_are_configured(self):
+        with open(
+            os.path.join(app.app.root_path, "vercel.json"),
+            encoding="utf-8",
+        ) as config_file:
+            config = json.load(config_file)
+
+        self.assertEqual(config["framework"], "flask")
+        public_static = os.path.join(app.app.root_path, "public", "static")
+        self.assertTrue(os.path.isfile(os.path.join(public_static, "styles.css")))
+        self.assertTrue(os.path.isfile(os.path.join(public_static, "tailwind.css")))
+
+    def test_vercel_build_only_static_endpoint_generates_asset_urls(self):
+        try:
+            with patch.dict(os.environ, {"VERCEL": "1"}):
+                importlib.reload(app)
+                deployed_app = app.app
+
+                self.assertIsNone(deployed_app.static_folder)
+                with deployed_app.test_request_context():
+                    self.assertEqual(
+                        app.url_for("static", filename="styles.css"),
+                        "/static/styles.css",
+                    )
+        finally:
+            importlib.reload(app)
 
     def test_site_logo_is_served(self):
         response = self.client.get("/static/logo.png")

@@ -12,7 +12,9 @@ from resend.exceptions import ResendError
 load_dotenv()
 resend.api_key = os.environ.get("RESEND_API_KEY")
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="public/static", static_url_path="/static")
+
+
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1024
 
 EMAIL_PATTERN = re.compile(r"^[^\s@]+@[^\s@]+\.[^\s@]+$")
