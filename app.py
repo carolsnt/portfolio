@@ -12,11 +12,8 @@ from resend.exceptions import ResendError
 load_dotenv()
 resend.api_key = os.environ.get("RESEND_API_KEY")
 
-if os.environ.get("VERCEL"):
-    app = Flask(__name__, static_folder=None)
-    app.add_url_rule("/static/<path:filename>", endpoint="static", build_only=True)
-else:
-    app = Flask(__name__, static_folder="public/static", static_url_path="/static")
+app = Flask(__name__, static_folder="public/static", static_url_path="/static")
+
 
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1024
 
